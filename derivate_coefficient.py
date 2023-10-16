@@ -2,7 +2,7 @@
 
 
 class MyDeriv():
-    """
+    '''
     Math terms recap: example 7x^5
     'monomial' is the entirety of 7x^5
     'coefficient" in this example is 7
@@ -12,7 +12,7 @@ class MyDeriv():
     in this example 7x^5
     'differenciation' is the function after finding derivate,
     in this example 35x^4
-    """
+    '''
     def __init__(self, coefficient, variable, exponent):
         self.coefficient = coefficient
         self.variable = variable
