@@ -1,31 +1,31 @@
 ''' docstring '''
-class MyVariable:
+class MyPolymonial:
     ''' docstring '''
     def __init__(self):
         # comment
-        self.var1_dict = {'coefficient': None, 'variable': None, 'exponent': None,}
-        self.var2_dict = {'coefficient': None, 'variable': None, 'exponent': None,}
-        self.var3_dict = {'coefficient': None, 'variable': None, 'exponent': None,}
+        self.coefficient_dict = {'coefficient_0': None, 'coefficient_1': None,}
+        self.variable_dict = {'variable_0': None, 'variable_1': None,}
+        self.exponent_dict = {'exponent_0': None, 'exponent_1': None,}
 
-    def update_dict1(self, new_data):
+    def update_coefficient_dict(self, new_data):
         ''' docstring '''
-        self.var1_dict.update(new_data)
+        self.coefficient_dict.update(new_data)
     
-    def update_dict2(self, new_data):
+    def update_variable_dict(self, new_data):
         ''' docstring '''
-        self.var2_dict.update(new_data)
+        self.variable_dict.update(new_data)
     
-    def update_dict3(self, new_data):
+    def update_exponent_dict(self, new_data):
         ''' docstring '''
-        self.var3_dict.update(new_data)
+        self.exponent_dict.update(new_data)
 
     def print_variables(self):
         ''' docstring '''
-        print(self.var1_dict)
-        print(self.var2_dict)
-        print(self.var3_dict)
+        print(self.coefficient_dict)
+        print(self.variable_dict)
+        print(self.exponent_dict)
 
-new_instance = MyVariable()
-new_instance.print_variables()
-new_instance.update_dict1({'coefficient': 2, 'variable': 'X', 'exponent': 4})
-new_instance.print_variables()
+new_polinomial = MyPolymonial()
+new_polinomial.print_variables()
+new_polinomial.update_coefficient_dict({'coefficient_0': 5})
+new_polinomial.print_variables()
