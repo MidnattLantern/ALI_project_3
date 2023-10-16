@@ -1,3 +1,5 @@
+''' docstring '''
+
 
 class MyDeriv():
     """
@@ -6,23 +8,41 @@ class MyDeriv():
     'coefficient" in this example is 7
     'variable' in this example is x
     'exponent' in this example is ^5
-    'parent function' is the function before finding derivate, in this example 7x^5
-    'differenciation' is the function after finding derivate, in this example 35x^4
+    'parent function' is the function before finding derivate,
+    in this example 7x^5
+    'differenciation' is the function after finding derivate,
+    in this example 35x^4
     """
     def __init__(self, coefficient, variable, exponent):
         self.coefficient = coefficient
         self.variable = variable
         self.exponent = exponent
 
+    # statement
     def parent_function(self):
-        return f"parent function is: {self.coefficient}{self.variable}^{self.exponent}"
+        '''
+        Returns the calculated parent, split as two rows due
+        to length
+        '''
+        print_parent = f"{self.coefficient}{self.variable}^{self.exponent}"
+        return f"parent function is: {print_parent}"
+
     def differenciation(self):
-        return f"differenciation is: {self.coefficient * self.exponent}{self.variable}^{self.exponent - 1}"
+        '''
+        Returns the calculated differenciation, split as three
+        rows due to length
+        '''
+        print_differenciation_1 = f"{self.coefficient* self.exponent}"
+        print_differenciation_2 = f"{self.variable}^{self.exponent- 1}"
+        return f"differenciation is: {print_differenciation_1}{print_differenciation_2}"
 
-coefficient_input = int(input("enter a whole number for coefficient: "))
-variable_input = str(input("enter a letter for variable: "))
-exponent_input = int(input("enter a whole number for exponent: "))
 
-my_deriv = MyDeriv(coefficient_input, variable_input, exponent_input)
+COEFFICIENT_INPUT = int(input("enter a whole number for coefficient: "))
+VARIABLE_INPUT = str(input("enter a letter for variable: "))
+EXPONENT_INPUT = int(input("enter a whole number for exponent: "))
+
+my_deriv = MyDeriv(COEFFICIENT_INPUT, VARIABLE_INPUT, EXPONENT_INPUT)
 print(my_deriv.parent_function())
 print(my_deriv.differenciation())
+
+# End-of-file (EOF)
