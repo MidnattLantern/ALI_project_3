@@ -32,9 +32,9 @@ class MyDeriv():
         Returns the calculated differenciation, split as three
         rows due to length
         '''
-        print_differenciation_1 = f"{self.coefficient* self.exponent}"
-        print_differenciation_2 = f"{self.variable}^{self.exponent- 1}"
-        return f"differenciation is: {print_differenciation_1}{print_differenciation_2}"
+        print_differ_1 = f"{self.coefficient* self.exponent}"
+        print_differ_2 = f"{self.variable}^{self.exponent- 1}"
+        return f"differenciation is: {print_differ_1}{print_differ_2}"
 
 
 COEFFICIENT_INPUT = int(input("enter a whole number for coefficient: "))
