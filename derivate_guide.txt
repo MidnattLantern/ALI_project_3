@@ -1,0 +1,20 @@
+--- How to find derivate ---
+
+EXAMPLE 1: f(y) = 4x^2
+- Take the exponent(^2), and multiply it with the coefficient(4):
+        4*2 = 8
+- Subtract the exponent with 1:
+        2-1 = 1
+Derivate: f'(y) = 8x^1
+
+EXAMPLE 2: f(y) = 8x^1
+- Same routine, but the exponent will dissolve:
+        8*1 = 8
+        1-1 = 0
+        f'(y) = 8x^0
+- In this case, the coefficient stay, while the expression(x) dissolve:
+Derivate: f'(y) = 8
+
+EXAMPLE 3: f(y) = 8
+- Derivate of a single coefficient makes it dissolve:
+Derivate: f'(y) = 0
