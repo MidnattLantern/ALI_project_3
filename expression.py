@@ -1,24 +1,18 @@
-"""
-docstring
-"""
+'''docstring'''
+INPUT_EXPRESSION = input(str("test: "))
+print(INPUT_EXPRESSION)
+
+# statement
 my_expression = {
-    "coefficient": None,
-    "variable": None,
-    "exponent": None,
+    'coefficient': None,
+    'variable': None,
+    'exponent': None,
 }
 
+def update_my_expression(coefficient):
+    '''docstring'''
+    my_expression['coefficient'] = coefficient
+
 print(my_expression)
-
-
-def update_my_expression(coefficient, variable, exponent):
-    """
-    docstring
-    """
-    my_expression["coefficient"]: coefficient
-    my_expression["variable"]: variable
-    my_expression["exponent"]: exponent
-
-
-update_my_expression(2, "x", 3)
 
 # End-of-file (EOF)

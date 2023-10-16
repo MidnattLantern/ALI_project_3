@@ -16,3 +16,5 @@ def calculate_k(y1, y2, x1, x2):
 
 calculate_k(y1, y2, x1, x2)
 print("K is: "+ str(k))
+
+# End-of-file (EOF)

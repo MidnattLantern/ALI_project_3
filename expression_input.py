@@ -1,4 +1,3 @@
-# user input will automatically be proccessed to a readable equation, regardless how messy and nonselsical it may be
 """
 - any variable, such as x y z will always have
  a coefficient and an exponent,
@@ -106,3 +105,5 @@ print("total indexes: "+ str(len(sliced_expression)))
 print(monomial_dictionary)
 
 print("------")
+
+# End-of-file (EOF)
