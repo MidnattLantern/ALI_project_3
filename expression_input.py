@@ -1,78 +1,94 @@
-'''docstring'''
-SLICED_EXPRESSION = []
-SLICED_EXPRESSION_INT_TARGET = []
-SLICED_EXPRESSION_STR_TARGET = []
-SLICED_EXPRESSION_type = []
-MONOMIAL_DICTIONARY = {}
+# user input will automatically be proccessed to a readable equation, regardless how messy and nonselsical it may be
+"""
+- any variable, such as x y z will always have
+ a coefficient and an exponent,
+if neither is given, they'll automatically be assigned as 1
+- any non integer will be automatically seperated
+"""
+
+# "libraries" or "library"
+sliced_expression = []
+sliced_expression_int_target = []
+sliced_expression_str_target = []
+sliced_expression_type = []
+monomial_dictionary = {}
 
 # edit of expression as string
 print("Note: integer following ^ will be an exponent")
-INPUT_EXPRESSION = str(input("Enter expression: "))
+input_expression = str(input("Enter expression: "))
 # filtering out CAPITAL and spaces
-INPUT_EXPRESSION = INPUT_EXPRESSION.replace(" ", "").lower()
-print("Expression: "+ INPUT_EXPRESSION)
+input_expression = input_expression.replace(" ", "").lower()
+print("Expression: "+ input_expression)
 
-# SLICED_EXPRESSION
-for i in INPUT_EXPRESSION:
-    SLICED_EXPRESSION.append(i)
+# sliced_expression
+for i in input_expression:
+    sliced_expression.append(i)
 
 print("------")
-for i in SLICED_EXPRESSION:
+for i in sliced_expression:
     try:
         print(int(i))
-        SLICED_EXPRESSION_INT_TARGET.append(i)
-        SLICED_EXPRESSION_STR_TARGET.append(None)
-    except TypeError:
+        sliced_expression_int_target.append(i)
+        sliced_expression_str_target.append(None)
+    except:
         print(i+ " is not an integer")
-        SLICED_EXPRESSION_STR_TARGET.append(i)
-        SLICED_EXPRESSION_INT_TARGET.append(None)
+        sliced_expression_str_target.append(i)
+        sliced_expression_int_target.append(None)
 print("------")
 
 print("------")
-print("all: "+ str(SLICED_EXPRESSION))
-#print(range(len(SLICED_EXPRESSION)))
-print("int: "+ str(SLICED_EXPRESSION_INT_TARGET))
-#print(range(len(SLICED_EXPRESSION_INT_TARGET)))
-print("str: "+ str(SLICED_EXPRESSION_STR_TARGET))
-#print(range(len(SLICED_EXPRESSION_STR_TARGET)))
+print("all: "+ str(sliced_expression))
+#print(range(len(sliced_expression)))
+print("int: "+ str(sliced_expression_int_target))
+#print(range(len(sliced_expression_int_target)))
+print("str: "+ str(sliced_expression_str_target))
+#print(range(len(sliced_expression_str_target)))
 print("------")
 
 # Identifying strings and integers using libraries
 print("------")
-for i in enumerate(SLICED_EXPRESSION):
-    if SLICED_EXPRESSION[i] == SLICED_EXPRESSION_INT_TARGET[i]:
-        print(str(SLICED_EXPRESSION[i])+ " is an integer")
-        SLICED_EXPRESSION_type.append(int)
-    elif SLICED_EXPRESSION[i] == SLICED_EXPRESSION_STR_TARGET[i]:
-        print(str(SLICED_EXPRESSION[i])+ " is a string")
-        SLICED_EXPRESSION_type.append(str)
+for i in range(len(sliced_expression)):
+    if sliced_expression[i] == sliced_expression_int_target[i]:
+        print(str(sliced_expression[i])+ " is an integer")
+        sliced_expression_type.append(int)
+    elif sliced_expression[i] == sliced_expression_str_target[i]:
+        print(str(sliced_expression[i])+ " is a string")
+        sliced_expression_type.append(str)
     else:
-        print("error: unable to identify integer or string for"+ str(SLICED_EXPRESSION[i]))
+        print("error: unable to identify integer or string for"+ str(sliced_expression[i]))
 print("------")
 
-
+'''
+- An expression, such as 12x, would in this case be:
+1 as index [0], 2 as index [1], and x as index[2]
+- Values may have more than one digit, so the next
+index will be appended to the string.
+- Variables in math are always single, so if the next
+or first or next index is a string, a monomial will be
+generated using the given values up until that point.
+- monomial_index keeps track how many monomials there
+should exist.
+'''
 print("------")
-WRITE_MONOMIAL = ""
-MONOMIAL_INDEX = 0
-for x in enumerate(SLICED_EXPRESSION_type):
-    if SLICED_EXPRESSION_type[x] == int:
-        WRITE_MONOMIAL += SLICED_EXPRESSION[x]
-    elif SLICED_EXPRESSION_type[x] == str:
+write_monomial = ""
+monomial_index = 0
+for x in range(len(sliced_expression_type)):
+    if sliced_expression_type[x] == int:
+        write_monomial += sliced_expression[x]
+    elif sliced_expression_type[x] == str:
         # Detecting operators
-        if SLICED_EXPRESSION_STR_TARGET[x] not in ["^", "+", "-", "*", "/", "sqrt"]:
-            WRITE_MONOMIAL += SLICED_EXPRESSION[x]
-            # Create monomial, reset WRITE_MONOMIAL, then move on to the next
-            MONOMIAL_DICTIONARY[MONOMIAL_INDEX] = WRITE_MONOMIAL
-            MONOMIAL_INDEX += 1
-            WRITE_MONOMIAL = ""
+        if sliced_expression_str_target[x] not in ["^", "+", "-", "*", "/", "sqrt"]:
+            write_monomial += sliced_expression[x]
+            # Create monomial, reset write_monomial, then move on to the next
+            monomial_dictionary[monomial_index] = write_monomial
+            monomial_index += 1
+            write_monomial = ""
     # Detecting when reaching the final input character
-    if x == len(SLICED_EXPRESSION[x]):
+    if x == len(sliced_expression[x]):
         print("final object")
-        if SLICED_EXPRESSION_type[x] == int:
+        if sliced_expression_type[x] == int:
             print("final object is an integer")
-print("total indexes: "+ str(len(SLICED_EXPRESSION)))
-print(MONOMIAL_DICTIONARY)
+print("total indexes: "+ str(len(sliced_expression)))
+print(monomial_dictionary)
 
 print("------")
-
-# End-of-file (EOF)

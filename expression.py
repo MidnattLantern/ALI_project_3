@@ -1,31 +1,31 @@
 ''' docstring '''
+class MyVariable:
+    ''' docstring '''
+    def __init__(self):
+        # comment
+        self.var1_dict = {'coefficient': None, 'variable': None, 'exponent': None,}
+        self.var2_dict = {'coefficient': None, 'variable': None, 'exponent': None,}
+        self.var3_dict = {'coefficient': None, 'variable': None, 'exponent': None,}
 
+    def update_dict1(self, new_data):
+        ''' docstring '''
+        self.var1_dict.update(new_data)
+    
+    def update_dict2(self, new_data):
+        ''' docstring '''
+        self.var2_dict.update(new_data)
+    
+    def update_dict3(self, new_data):
+        ''' docstring '''
+        self.var3_dict.update(new_data)
 
-class MyInput():
-    '''
-    docstring
-    '''
-    def __init__(self, coefficient, variable, exponent):
-        self.coefficient = coefficient
-        self.variable = variable
-        self.exponent = exponent
+    def print_variables(self):
+        ''' docstring '''
+        print(self.var1_dict)
+        print(self.var2_dict)
+        print(self.var3_dict)
 
-        # statement
-    def expression(self):
-        '''
-        docstring
-        '''
-        print_my_coefficient = f"{self.coefficient}"
-        print_my_variable = f"{self.variable}"
-        print_my_exponent = f"{self.exponent}"
-        return f"expression: {print_my_coefficient}{print_my_variable}{print_my_exponent}"
-
-
-COEFFICIENT_INPUT = int(input("enter a whole number for coefficient: "))
-VARIABLE_INPUT = str(input("enter a letter for variable: "))
-EXPONENT_INPUT = int(input("enter a whole number for exponent: "))
-
-my_input = MyInput(COEFFICIENT_INPUT, VARIABLE_INPUT, EXPONENT_INPUT)
-print(my_input.expression())
-
-# End-of-file (EOF)
+new_instance = MyVariable()
+new_instance.print_variables()
+new_instance.update_dict1({'coefficient': 2, 'variable': 'X', 'exponent': 4})
+new_instance.print_variables()
