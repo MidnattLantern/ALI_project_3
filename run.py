@@ -35,10 +35,16 @@ def run(TAG_APPLICATION):
         my_deriv = MyDeriv(COEFFICIENT_INPUT, VARIABLE_INPUT, EXPONENT_INPUT)
         print(my_deriv.parent_function())
         print(my_deriv.differenciation())
+    elif TAG_APPLICATION in tag_linerar_equation:
+        from linear_2p_equation import myLinear2pEquation
+        my_2p = myLinear2pEquation()
+        my_2p.update_input()
+        my_2p.calculate_2p()
+        my_2p.print_2p()
     else:
         print("try again")
 
-TAG_TAG_APPLICATION = input("Run: ")
+TAG_APPLICATION = input("Run: ")
 run(TAG_APPLICATION)
 
 # End-of-file (EOF)

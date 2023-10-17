@@ -39,9 +39,9 @@ class myLinear2pEquation():
         print(self.x1)
         print(self.x2)
 
-my_int = myLinear2pEquation()
-my_int.update_input()
-my_int.calculate_2p()
-my_int.print_2p()
+my_2p = myLinear2pEquation()
+my_2p.update_input()
+my_2p.calculate_2p()
+my_2p.print_2p()
 
 # End-of-file (EOF)
