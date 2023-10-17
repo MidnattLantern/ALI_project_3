@@ -1,6 +1,5 @@
 ''' docstring '''
 
-
 class MyDeriv():
     '''
     Math terms recap: example 7x^5
@@ -18,7 +17,6 @@ class MyDeriv():
         self.variable = variable
         self.exponent = exponent
 
-    # statement
     def parent_function(self):
         '''
         Returns the calculated parent, split as two rows due
