@@ -18,18 +18,27 @@ class MyPolymonial:
         ''' docstring '''
         self.input_expression = new_index
 
+    def append_all_index(self):
+        ''' docstring '''
+        for i in self.input_expression:
+            self.all_index.append(i)
+            print(self.all_index)
+
     def print_index(self):
+        ''' docstring '''
         print(self.all_index)
         print(self.int_index)
         print(self.var_index)
         print(self.opr_index)
         print(self.input_expression)
 
-new_polinomial = MyPolymonial("test")
+new_polinomial = MyPolymonial("")
 
 new_polinomial.update_input_expression(str(input("input: ")))
 
-print(new_polinomial.input_expression)
+new_polinomial.print_index()
+
+new_polinomial.append_all_index()
 
 
 # End-of-file (EOF)
