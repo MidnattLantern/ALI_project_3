@@ -42,10 +42,4 @@ class MyDeriv():
         return f"differenciation is: {print_differ_1}{print_differ_2}"
 
 
-
-
-
-print(my_deriv.parent_function())
-print(my_deriv.differenciation())
-
 # End-of-file (EOF)

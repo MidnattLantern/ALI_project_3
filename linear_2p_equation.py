@@ -18,7 +18,7 @@ class myLinear2pEquation():
         self.x1 = x1
         self.x2 = x2
 
-    def update_input(self):
+    def update_my_input(self):
         '''
         appropriate to use for calling
         '''
@@ -41,7 +41,7 @@ class myLinear2pEquation():
         print(self.x2)
 
 my_2p = myLinear2pEquation()
-my_2p.update_input()
+my_2p.update_my_input()
 my_2p.calculate_2p()
 my_2p.print_2p()
 
