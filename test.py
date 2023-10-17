@@ -1,28 +1,16 @@
-''' docstring '''
-class MyClass:
-    ''' docstring '''
-    def __init__(self):
-        # Initialize a dictionary attribute
-        self.my_dict = {'key1': 'value1', 'key2': 'value2'}
+all_index = [2, 5, 'x', '^', 5,'+','7']
+int_index = [2, 5, None, None, 5, None, '7']
+var_index = [None, None, 'x', None, None, None, None]
+opr_index = [None, None, None, '^', None, '+', None]
 
-    def update_dict(self, new_data):
-        ''' docstring '''
-        # Method to update the dictionary
-        self.my_dict.update(new_data)
+my_dict = {
+    0: [0],
+}
 
-    def print_dict(self):
-        ''' docstring '''
-        # Method to print the dictionary
-        print(self.my_dict)
+print(my_dict)
 
-# Create an instance of the class
-my_instance = MyClass()
-
-# Print the initial dictionary
-my_instance.print_dict()
-
-# Update the dictionary
-my_instance.update_dict({'key3': 'value3', 'key4': 'value4'})
-
-# Print the updated dictionary
-my_instance.print_dict()
+for i in range(8):
+    my_dict.update({
+        i: [i]
+    })
+    print(my_dict)
