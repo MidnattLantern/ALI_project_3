@@ -8,9 +8,9 @@ class myLinear2pEquation():
         self.x1 = 0
         self.x2 = 0
 
-    def update_2p(self, y1, y2, x1, x2):
+    def update_my_2p(self, y1, y2, x1, x2):
         '''
-        inappropriate to use for calling, use
+        Inappropriate to use for calling, use
         update_input() instead
         '''
         self.y1 = y1
@@ -20,13 +20,13 @@ class myLinear2pEquation():
 
     def update_my_input(self):
         '''
-        appropriate to use for calling
+        Appropriate to use for calling
         '''
         y1 = int(input("y1: "))
         y2 = int(input("y2: "))
         x1 = int(input("x1: "))
         x2 = int(input("x2: "))
-        self.update_2p(y1, y2, x1, x2)
+        self.update_my_2p(y1, y2, x1, x2)
 
     def calculate_2p(self):
         ''' docstring '''
