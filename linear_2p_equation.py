@@ -29,6 +29,7 @@ class myLinear2pEquation():
         self.update_2p(y1, y2, x1, x2)
 
     def calculate_2p(self):
+        ''' docstring '''
         k = (self.y2 - self.y1) / (self.x2 - self.x1)
         print(k)
 

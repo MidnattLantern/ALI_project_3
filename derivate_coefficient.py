@@ -17,6 +17,13 @@ class MyDeriv():
         self.variable = variable
         self.exponent = exponent
 
+    def my_input(self):
+        ''' docstring '''
+        COEFFICIENT_INPUT = int(input("enter a whole number for coefficient: "))
+        VARIABLE_INPUT = str(input("enter a letter for variable: "))
+        EXPONENT_INPUT = int(input("enter a whole number for exponent: "))
+        self.MyDeriv(COEFFICIENT_INPUT, VARIABLE_INPUT, EXPONENT_INPUT)
+
     def parent_function(self):
         '''
         Returns the calculated parent, split as two rows due
@@ -35,11 +42,9 @@ class MyDeriv():
         return f"differenciation is: {print_differ_1}{print_differ_2}"
 
 
-COEFFICIENT_INPUT = int(input("enter a whole number for coefficient: "))
-VARIABLE_INPUT = str(input("enter a letter for variable: "))
-EXPONENT_INPUT = int(input("enter a whole number for exponent: "))
 
-my_deriv = MyDeriv(COEFFICIENT_INPUT, VARIABLE_INPUT, EXPONENT_INPUT)
+
+
 print(my_deriv.parent_function())
 print(my_deriv.differenciation())
 
