@@ -24,6 +24,19 @@ class MyPolymonial:
             self.all_index.append(i)
             print(self.all_index)
 
+    def verify_all_index(self):
+        ''' docstring '''
+        for i in self.all_index:
+            if i in LEGAL_INTEGERS:
+                print(i + ' is an integer')
+            elif i in LEGAL_LETTERS_VAR:
+                print(i + ' is a variable')
+            elif i in LEGAL_LETTERS_OPERATORS:
+                print(i + ' is an operator')
+            else:
+                print(i + ' is illegal and will be discarded')
+                continue
+
     def print_index(self):
         ''' docstring '''
         print(self.all_index)
@@ -40,17 +53,13 @@ new_polinomial.print_index()
 
 new_polinomial.append_all_index()
 
+new_polinomial.verify_all_index()
 
 # End-of-file (EOF)
 
+
+
 '''
-def append_all_index():
-
-    for i in input_expression:
-        all_index.append(i)
-        print(all_index)
-
-
 def verify_all_index():
 
     for i in all_index:
@@ -76,7 +85,6 @@ def verify_all_index():
     print("Variable index: " + str(var_index))
     print("Operator index: " + str(opr_index))
 '''
-
 
 
 # End-of-file (EOF)
