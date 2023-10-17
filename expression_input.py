@@ -29,10 +29,20 @@ class MyPolymonial:
         for i in self.all_index:
             if i in LEGAL_INTEGERS:
                 print(i + ' is an integer')
+                self.int_index.append(int(i))
+                self.var_index.append(None)
+                self.opr_index.append(None)
             elif i in LEGAL_LETTERS_VAR:
                 print(i + ' is a variable')
+                self.int_index.append(None)
+                self.var_index.append(i)
+                self.opr_index.append(None)
             elif i in LEGAL_LETTERS_OPERATORS:
                 print(i + ' is an operator')
+                print(i + " is an operator")
+                self.int_index.append(None)
+                self.var_index.append(None)
+                self.opr_index.append(i)
             else:
                 print(i + ' is illegal and will be discarded')
                 continue
@@ -49,42 +59,10 @@ new_polinomial = MyPolymonial("")
 
 new_polinomial.update_input_expression(str(input("input: ")))
 
-new_polinomial.print_index()
-
 new_polinomial.append_all_index()
 
 new_polinomial.verify_all_index()
 
-# End-of-file (EOF)
-
-
-
-'''
-def verify_all_index():
-
-    for i in all_index:
-        if i in LEGAL_INTEGERS:
-            print(i + " is an integer")
-            int_index.append(int(i))
-            var_index.append(None)
-            opr_index.append(None)
-        elif i in LEGAL_LETTERS_VAR:
-            print(i + " is a variable")
-            int_index.append(None)
-            var_index.append(i)
-            opr_index.append(None)
-        elif i in LEGAL_LETTERS_OPERATORS:
-            print(i + " is an operator")
-            int_index.append(None)
-            var_index.append(None)
-            opr_index.append(i)
-        else:
-            print(i + " is illegal and will be discarded")
-            continue
-    print("Integer index: " + str(int_index))
-    print("Variable index: " + str(var_index))
-    print("Operator index: " + str(opr_index))
-'''
-
+new_polinomial.print_index()
 
 # End-of-file (EOF)
