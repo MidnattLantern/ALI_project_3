@@ -10,10 +10,24 @@ int_index = []
 var_index = []
 opr_index = []
 
-print(all_index)
+
 
 from expression_input import MyPolymonial
-new_polinomial = MyPolymonial()
+new_polynomial = MyPolymonial()
+new_polynomial.update_my_input()
+new_polynomial.append_all_index()
+new_polynomial.verify_all_index()
+new_polynomial.print_index()
+
+all_index = new_polynomial.return_all_index()
+int_index = new_polynomial.return_int_index()
+var_index = new_polynomial.return_var_index()
+opr_index = new_polynomial.return_opr_index()
+print("test: "+ str(all_index))
+print("test: "+ str(int_index))
+print("test: "+ str(var_index))
+print("test: "+ str(opr_index))
+
 
 # first is always positive
 monomonial = ['+',]
