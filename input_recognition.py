@@ -1,18 +1,10 @@
-''' test
-all_index = [2, 5, 'x', '^', 5,'+','7', '+', '2', '-']
-int_index = [2, 5, None, None, 5, None, 7, None, 2, None]
-var_index = [None, None, 'x', None, None, None, None, None, None, None]
-opr_index = [None, None, None, '^', None, '+', None, '+', None, '-']
-'''
+from polymonial_input import MyPolymonial
 
 all_index = []
 int_index = []
 var_index = []
 opr_index = []
 
-
-
-from expression_input import MyPolymonial
 new_polynomial = MyPolymonial()
 new_polynomial.update_my_input()
 new_polynomial.append_all_index()

@@ -16,7 +16,7 @@ print("4: count linear 2p equation")
 def run(TAG_APPLICATION):
     ''' docstring '''
     if TAG_APPLICATION in tag_run_input:
-        from expression_input import MyPolymonial
+        from polymonial_input import MyPolymonial
         new_polinomial = MyPolymonial("")
         new_polinomial.update_input_expression(str(input("input: ")))
         new_polinomial.append_all_index()
