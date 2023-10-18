@@ -1,18 +1,14 @@
-class MyObject:
-    def __init__(self, name):
-        self.name = name
+# run.py
+from test import DataClass
 
-    def update_name(self, new_name):
-        self.name = new_name
+# Create an instance of DataClass
+data_instance = DataClass()
 
-# Create an instance of the class
-my_instance = MyObject("John")
+my_list_data = []
+print(my_list_data)
 
-# Print the initial name
-print(f"Initial Name: {my_instance.name}")
+# Access the list from the instance
+my_list_data = data_instance.get_data()
 
-# Update the name using the method
-my_instance.update_name("Jane")
-
-# Print the updated name
-print(f"Updated Name: {my_instance.name}")
+# Now my_list_data contains [1, 2, 3]
+print(my_list_data)

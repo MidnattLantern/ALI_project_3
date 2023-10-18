@@ -1,16 +1,8 @@
-all_index = [2, 5, 'x', '^', 5,'+','7']
-int_index = [2, 5, None, None, 5, None, '7']
-var_index = [None, None, 'x', None, None, None, None]
-opr_index = [None, None, None, '^', None, '+', None]
+# data.py
 
-my_dict = {
-    0: [0],
-}
+class DataClass:
+    def __init__(self):
+        self.my_list = [1, 2, 3, 'k']
 
-print(my_dict)
-
-for i in range(8):
-    my_dict.update({
-        i: [i]
-    })
-    print(my_dict)
+    def get_data(self):
+        return self.my_list

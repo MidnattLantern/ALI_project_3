@@ -8,23 +8,33 @@ class MyPolymonial:
     ''' all_index and input_expresson may store illegal characters,
      but int_index, var_index, opr_index wont, and only those will
      be used for following steps '''
-    def __init__(self, input_expression):
+    def __init__(self):
         # The "organised libraries"
         self.all_index = []
         self.int_index = []
         self.var_index = []
         self.opr_index = []
+
+    def update_my_index(self, input_expression):
+        ''' docstring '''
         self.input_expression = input_expression
 
-    def update_input_expression(self, new_index):
+    def update_my_expression(self, new_index):
         ''' Captured from user input in later code '''
         self.input_expression = new_index
+
+    def update_my_input(self):
+        ''' docstring '''
+        new_index = str(input("input: "))
+        self.update_my_expression(new_index)
 
     def append_all_index(self):
         ''' Has to be done before verification '''
         for i in self.input_expression:
-            self.all_index.append(i)
-            print(self.all_index)
+            # how to shorten?
+            if i in LEGAL_INTEGERS or i in LEGAL_LETTERS_OPERATORS or i in LEGAL_LETTERS_VAR:
+                self.all_index.append(i)
+                print(self.all_index)
 
     def verify_all_index(self):
         ''' Verification has to be done after append_all_index '''
@@ -49,22 +59,37 @@ class MyPolymonial:
                 print(i + ' is illegal and will be discarded')
                 continue
 
+    def return_all_index(self):
+        ''' docstring '''
+        return(self.all_index)
+    
+    def return_int_index(self):
+        ''' docstring '''
+        return(self.int_index)
+    
+    def return_var_index(self):
+        ''' docstring '''
+        return(self.var_index)
+    
+    def return_opr_index(self):
+        ''' docstring '''
+        return(self.opr_index)
+
     def print_index(self):
         ''' user's feedback '''
         print(self.all_index)
         print(self.int_index)
         print(self.var_index)
         print(self.opr_index)
-        print(self.input_expression)
 
-new_polinomial = MyPolymonial("")
+new_polynomial = MyPolymonial()
 
-new_polinomial.update_input_expression(str(input("input: ")))
+new_polynomial.update_my_input()
 
-new_polinomial.append_all_index()
+new_polynomial.append_all_index()
 
-new_polinomial.verify_all_index()
+new_polynomial.verify_all_index()
 
-new_polinomial.print_index()
+new_polynomial.print_index()
 
 # End-of-file (EOF)
