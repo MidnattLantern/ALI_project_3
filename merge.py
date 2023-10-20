@@ -14,6 +14,12 @@ class MyPolymonial:
         self.int_index = []
         self.var_index = []
         self.opr_index = []
+        # first is always positive
+        self.monomonial = ['+',]
+        self.dict_index = 0
+        self.my_dict = {
+
+        }
 
     def update_my_index(self, input_expression):
         ''' docstring '''
@@ -82,22 +88,6 @@ class MyPolymonial:
         print(self.var_index)
         print(self.opr_index)
 
-
-
-class InputRecognition():
-    ''' docstring '''
-    def __init__(self):
-        self.all_index = []
-        self.int_index = []
-        self.var_index = []
-        self.opr_index = []
-        # first is always positive
-        self.monomonial = ['+',]
-        self.dict_index = 0
-        self.my_dict = {
-
-        }
-
     def print_all(self):
         ''' docstring '''
         for x in self.int_index:
@@ -108,7 +98,7 @@ class InputRecognition():
             print(z)
 
     def split(self):
-        ''' docstring'''
+        ''' used for generate_docstring() '''
         self.my_dict.update({
             self.dict_index: [''.join(self.monomonial)]
         })
@@ -137,15 +127,10 @@ class InputRecognition():
             if int(i+ 1) == int(len(self.all_index)):
                 self.split()
                 self.monomonial.append(str(self.opr_index[i]))
-    
 
 new_polynomial = MyPolymonial()
-analyze = InputRecognition
-
 new_polynomial.update_my_input()
-
 new_polynomial.append_all_index()
-
 new_polynomial.verify_all_index()
-
 new_polynomial.print_index()
+new_polynomial.generate_monomonial()

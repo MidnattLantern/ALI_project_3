@@ -54,8 +54,17 @@ class InputRecognition():
             if int(i+ 1) == int(len(self.all_index)):
                 self.split()
                 self.monomonial.append(str(self.opr_index[i]))
+
+    def return_my_polymonial(self):
+        ''' docstring '''
+        return(self.my_dict)
     
+    def print_my_polymonial(self):
+        ''' docstring '''
+        print(self.my_dict)
+
     def run_input(self):
+        ''' test function '''
         my_polymonial.update_my_input()
         my_polymonial.append_all_index()
         my_polymonial.verify_all_index()
@@ -64,11 +73,8 @@ class InputRecognition():
         self.var_index = my_polymonial.return_var_index()
         self.opr_index = my_polymonial.return_opr_index()
         self.generate_monomonial()
-        print(self.all_index)
-        print(self.int_index)
-        print(self.var_index)
-        print(self.opr_index)
-        print(self.my_dict)
+        self.return_my_polymonial()
+        self.print_my_polymonial
 
 input_recognition = InputRecognition()
 input_recognition.run_input()
