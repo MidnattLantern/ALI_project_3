@@ -1,6 +1,3 @@
-from polymonial_input import MyPolymonial
-from derivate_coefficient import MyDeriv
-from linear_2p_equation import myLinear2pEquation
 
 tag_run_input = ['1', 'input']
 tag_derivate_guide = ['2', 'derivate guide']
@@ -18,11 +15,9 @@ print("4: count linear 2p equation")
 def run(tag_application):
     ''' docstring '''
     if tag_application in tag_run_input:
-        new_polinomial = MyPolymonial()
-        new_polinomial.update_my_input()
-        new_polinomial.append_all_index()
-        new_polinomial.verify_all_index()
-        new_polinomial.print_index()
+        from input_recognition import InputRecognition
+        new_polynomial = InputRecognition()
+        new_polynomial.run_input()
     elif tag_application in tag_derivate_guide:
         f = open('derivate_guide.txt', encoding='utf-8')
         lines = f.read()
