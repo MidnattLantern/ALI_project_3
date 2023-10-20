@@ -9,7 +9,7 @@ my_polymonial = {
 
 }
 
-print("Type the program you want to use:")
+print("--- Type the program you want to use: ---")
 print("1: input")
 print("2: derivate guide")
 print("3: count countefficient")
@@ -29,10 +29,23 @@ def run(tag_application):
         lines = f.read()
         f.close()
         print(lines)
+    elif tag_application in tag_count_coefficient:
+        from derivate_coefficient import MyDeriv
+        my_deriv = MyDeriv()
+        my_deriv.update_my_input()
+        my_deriv.return_parent()
+        my_deriv.print_parent()
+        my_deriv.return_differenciation()
+        my_deriv.print_differenciation()
+    elif tag_application in tag_linerar_equation:
+        from linear_2p_equation import myLinear2pEquation
+        my_2p = myLinear2pEquation()
+        my_2p.update_my_input()
+        my_2p.calculate_2p()
     else:
         print("try again")
 
-tag_application = input("Run: ")
+tag_application = input("Run: ") 
 run(tag_application)
 
 # End-of-file (EOF)

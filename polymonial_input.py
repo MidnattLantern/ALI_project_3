@@ -34,7 +34,9 @@ class MyPolymonial:
             # how to shorten?
             if i in LEGAL_INTEGERS or i in LEGAL_LETTERS_OPERATORS or i in LEGAL_LETTERS_VAR:
                 self.all_index.append(i)
-                print(self.all_index)
+                print('test: '+ str(self.all_index))
+            else:
+                print(str(i)+ " will be discarded")
 
     def verify_all_index(self):
         ''' Verification has to be done after append_all_index '''
@@ -44,14 +46,16 @@ class MyPolymonial:
                 self.int_index.append(int(i))
                 self.var_index.append(None)
                 self.opr_index.append(None)
+
             elif i in LEGAL_LETTERS_VAR:
                 print(i + ' is a variable')
                 self.int_index.append(None)
                 self.var_index.append(i)
                 self.opr_index.append(None)
+
+
             elif i in LEGAL_LETTERS_OPERATORS:
                 print(i + ' is an operator')
-                print(i + " is an operator")
                 self.int_index.append(None)
                 self.var_index.append(None)
                 self.opr_index.append(i)
@@ -77,19 +81,17 @@ class MyPolymonial:
 
     def print_index(self):
         ''' user's feedback '''
-        print(self.all_index)
-        print(self.int_index)
-        print(self.var_index)
-        print(self.opr_index)
+        print('all: '+ str(self.all_index))
+        print('int: '+ str(self.int_index))
+        print('var: '+ str(self.var_index))
+        print('opr: '+ str(self.opr_index))
 
+'''
 new_polynomial = MyPolymonial()
-
 new_polynomial.update_my_input()
-
 new_polynomial.append_all_index()
-
 new_polynomial.verify_all_index()
-
 new_polynomial.print_index()
+'''
 
 # End-of-file (EOF)

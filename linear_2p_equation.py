@@ -31,9 +31,9 @@ class myLinear2pEquation():
     def calculate_2p(self):
         ''' docstring '''
         k = (self.y2 - self.y1) / (self.x2 - self.x1)
-        print(k)
+        print("k is: "+ str(k))
 
-    def print_2p(self):
+    def print_2p_input(self):
         ''' docstring '''
         print(self.y1)
         print(self.y2)
@@ -43,6 +43,5 @@ class myLinear2pEquation():
 my_2p = myLinear2pEquation()
 my_2p.update_my_input()
 my_2p.calculate_2p()
-my_2p.print_2p()
 
 # End-of-file (EOF)

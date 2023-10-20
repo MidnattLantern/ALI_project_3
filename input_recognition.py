@@ -74,7 +74,10 @@ class InputRecognition():
         self.opr_index = my_polymonial.return_opr_index()
         self.generate_monomonial()
         self.return_my_polymonial()
-        self.print_my_polymonial
+        self.print_my_polymonial()
+        self.return_my_polymonial()
 
+'''
 input_recognition = InputRecognition()
 input_recognition.run_input()
+'''

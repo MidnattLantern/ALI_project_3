@@ -1,5 +1,7 @@
 ''' docstring '''
 
+
+
 class MyDeriv():
     ''' docstring '''
     def __init__(self):
@@ -16,7 +18,7 @@ class MyDeriv():
     def update_my_input(self):
         ''' docstring '''
         coefficient = int(input("enter a whole number for coefficient: "))
-        variable = str(input("enter a letter for variable: "))
+        variable = 'x'
         exponent = int(input("enter a whole number for exponent: "))
         self.update_my_deriv(coefficient, variable, exponent)
 
