@@ -1,74 +1,74 @@
 from polymonial_input import MyPolymonial
+my_polymonial = MyPolymonial()
 
-all_index = []
-int_index = []
-var_index = []
-opr_index = []
+class InputRecognition():
+    ''' docstring '''
+    def __init__(self):
+        self.all_index = []
+        self.int_index = []
+        self.var_index = []
+        self.opr_index = []
+        # first is always positive
+        self.monomonial = ['+',]
+        self.dict_index = 0
+        self.my_dict = {
 
-new_polynomial = MyPolymonial()
-new_polynomial.update_my_input()
-new_polynomial.append_all_index()
-new_polynomial.verify_all_index()
-new_polynomial.print_index()
+        }
 
-all_index = new_polynomial.return_all_index()
-int_index = new_polynomial.return_int_index()
-var_index = new_polynomial.return_var_index()
-opr_index = new_polynomial.return_opr_index()
-print("test: "+ str(all_index))
-print("test: "+ str(int_index))
-print("test: "+ str(var_index))
-print("test: "+ str(opr_index))
+    def print_all(self):
+        ''' docstring '''
+        for x in self.int_index:
+            print(x)
+        for y in self.var_index:
+            print(y)
+        for z in self.opr_index:
+            print(z)
 
+    def split(self):
+        ''' docstring'''
+        self.my_dict.update({
+            self.dict_index: [''.join(self.monomonial)]
+        })
 
-# first is always positive
-monomonial = ['+',]
+    def generate_monomonial(self):
+        ''' docstring '''
+        # generating each monomonial
+        for i, _ in enumerate(self.all_index):
+            if self.int_index[i] != None:
+                self.monomonial.append(str(self.int_index[i]))
 
-dict_index = 0
+            elif self.var_index[i] != None:
+                self.monomonial.append(str(self.var_index[i]))
 
-my_dict = {
+            elif self.opr_index[i] != None:
+                if self.opr_index[i] == '^':
+                    self.monomonial.append(str(self.opr_index[i]))
 
-}
+                else:
+                    self.split()
+                    self.dict_index += 1
+                    self.monomonial.clear()
+                    self.monomonial.append(str(self.opr_index[i]))
 
-def print_all():
-    for x in int_index:
-        print(x)
-    print('------')
-    for y in var_index:
-        print(y)
-    print('------')
-    for z in opr_index:
-        print(z)
-print_all()
+            # checking final index, this cannot be an elif !!
+            if int(i+ 1) == int(len(self.all_index)):
+                self.split()
+                self.monomonial.append(str(self.opr_index[i]))
+    
+    def run_input(self):
+        my_polymonial.update_my_input()
+        my_polymonial.append_all_index()
+        my_polymonial.verify_all_index()
+        self.all_index = my_polymonial.return_all_index()
+        self.int_index = my_polymonial.return_int_index()
+        self.var_index = my_polymonial.return_var_index()
+        self.opr_index = my_polymonial.return_opr_index()
+        self.generate_monomonial()
+        print(self.all_index)
+        print(self.int_index)
+        print(self.var_index)
+        print(self.opr_index)
+        print(self.my_dict)
 
-def split():
-    my_dict.update({
-        dict_index: [''.join(monomonial)]
-    })
-    print(my_dict)
-
-print('------')
-# generating each monomonial
-for i, _ in enumerate(all_index):
-    if int_index[i] != None:
-        monomonial.append(str(int_index[i]))
-
-    elif var_index[i] != None:
-        monomonial.append(str(var_index[i]))
-
-    elif opr_index[i] != None:
-        if opr_index[i] == '^':
-            monomonial.append(str(opr_index[i]))
-
-        else:
-            split()
-            dict_index += 1
-            monomonial.clear()
-            monomonial.append(str(opr_index[i]))
-
-    # checking final index, this cannot be an elif !!
-    if int(i+ 1) == int(len(all_index)):
-        split()
-        monomonial.append(str(opr_index[i]))
-
-print("my_dict: "+ str(my_dict))
+input_recognition = InputRecognition()
+input_recognition.run_input()
