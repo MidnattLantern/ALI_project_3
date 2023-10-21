@@ -77,7 +77,16 @@ class InputRecognition():
         self.print_my_polymonial()
         self.return_my_polymonial()
 
+'''
+input_recognition = InputRecognition()
+input_recognition.run_input()
+
+new_polynomial = MyPolymonial()
+new_polynomial.run()
+
 # recomended string
+'''
+
 if __name__ == '__main__':
     input_recognition = InputRecognition()
     input_recognition.run_input()

@@ -5,7 +5,7 @@ tag_derivate_guide = ['3', 'derivate guide']
 tag_run_derivate = ['4', 'run derivate']
 tag_linear2p_guide = ['5', 'linear 2p equation guide']
 tag_run_linerar2p = ['6', 'run linear 2p equation']
-tag_exit = ['halt', 'exit', 'quit', 'stop']
+tag_exit = ['99', 'halt', 'exit', 'quit', 'stop']
 
 loop_run = True
 tag_application = None
@@ -19,6 +19,14 @@ def run(tag_application):
             print("app 1")
         elif tag_application in tag_run_input:
             print("app 2")
+            
+            from input_recognition import InputRecognition
+            global my_polymonial
+            input_recognition = InputRecognition()
+            input_recognition.run_input()
+            my_polymonial = input_recognition.my_dict
+            print("this: "+ str(my_polymonial))
+
         elif tag_application in tag_derivate_guide:
             print("app 3")
         elif tag_application in tag_run_derivate:

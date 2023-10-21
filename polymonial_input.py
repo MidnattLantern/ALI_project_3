@@ -86,6 +86,19 @@ class MyPolymonial:
         print('var: '+ str(self.var_index))
         print('opr: '+ str(self.opr_index))
 
+
+    def run(self):
+        ''' docstring '''
+        self.update_my_input()
+        self.append_all_index()
+        self.verify_all_index()
+        self.print_index()
+
+'''
+new_polynomial = MyPolymonial()
+new_polynomial.run()
+'''
+
 '''
 new_polynomial = MyPolymonial()
 new_polynomial.update_my_input()
