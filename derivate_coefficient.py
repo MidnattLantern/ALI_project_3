@@ -1,3 +1,4 @@
+
 from input_recognition import InputRecognition
 
 ''' docstring '''
@@ -93,6 +94,7 @@ class MyDeriv():
         run_deriv.print_parent()
         run_deriv.return_differenciation()
         run_deriv.print_differenciation()
+
 
 run_deriv = MyDeriv()
 input_recognition = InputRecognition()
