@@ -22,9 +22,26 @@ def run(tag_application):
 
         elif tag_application in tag_run_input:
             print("app 2")
-            from input_recognition import InputRecognition
             global my_polymonial
+            my_polymonial.clear()
+            from input_recognition import InputRecognition
+            from polymonial_input import MyPolymonial
             input_recognition = InputRecognition()
+            poly = MyPolymonial()
+
+            poly.reset()
+            print(poly.all_index)
+            print(poly.int_index)
+            print(poly.var_index)
+            print(poly.opr_index)
+            input_recognition.all_index = []
+            input_recognition.int_index = []
+            input_recognition.var_index = []
+            input_recognition.opr_index = []
+            input_recognition.monomonial = ['+',]
+            input_recognition.dict_index = 0
+            input_recognition.my_dict = {}
+
             input_recognition.run_input()
             my_polymonial = input_recognition.my_dict
             print("this: "+ str(my_polymonial))
@@ -35,11 +52,11 @@ def run(tag_application):
             print("app 3")
             print("Hit Enter to continue...")
             input('')
-            
+
         elif tag_application in tag_run_derivate:
             print("app 4")
             from derivate_coefficient import MyDeriv
-            #run_deriv = MyDeriv()
+            run_deriv = MyDeriv()
             #input_recognition = InputRecognition()
             #input_recognition.run_input()
             #myVar = input_recognition.return_my_polymonial()
@@ -54,6 +71,8 @@ def run(tag_application):
 
         elif tag_application in tag_run_linerar2p:
             print("app 6")
+            from linear_2p_equation import My2pEquation
+
             print("Hit Enter to continue...")
             input('')
 

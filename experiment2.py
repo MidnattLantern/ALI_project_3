@@ -1,104 +1,109 @@
-from input_recognition import InputRecognition
 
-''' docstring '''
+tag_input_guide = ['1', 'input guide']
+tag_run_input = ['2', 'run input']
+tag_derivate_guide = ['3', 'derivate guide']
+tag_run_derivate = ['4', 'run derivate']
+tag_linear2p_guide = ['5', 'linear 2p equation guide']
+tag_run_linerar2p = ['6', 'run linear 2p equation']
+tag_exit = ['99', 'halt', 'exit', 'quit', 'stop', 'close']
 
-class MyDeriv():
-    ''' docstring '''
-    def __init__(self):
-        self.coefficient = None
-        self.variable = None
-        self.exponent = None
-        self.indx_coefficient = None
-        self.indx_exponent = None
+loop_run = True
+tag_application = None
+my_polymonial = {
 
-    def my_var(self):
+}
+
+def run(tag_application):
         ''' docstring '''
-        self.myVar = {
+        if tag_application in tag_input_guide:
+            print("app 1")
+            print("Hit Enter to continue...")
+            input('')
 
-        }
+        elif tag_application in tag_run_input:
+            print("app 2")
+            global my_polymonial
+            my_polymonial.clear()
+            from input_recognition import InputRecognition
+            from polymonial_input import MyPolymonial
+            input_recognition = InputRecognition()
+            poly = MyPolymonial()
 
-    def assign_my_deriv(self):
-        ''' docstring '''
-        print("")
-        print("--- Derivate ---")
-        print("Use the index for any monomonial you've assigned,")
-        print("monomonials containing a variable will be rejected")
-        print("Your polymonials:")
-        print(myVar)
+            poly.reset()
+            print(poly.all_index)
+            print(poly.int_index)
+            print(poly.var_index)
+            print(poly.opr_index)
+            input_recognition.all_index = []
+            input_recognition.int_index = []
+            input_recognition.var_index = []
+            input_recognition.opr_index = []
+            input_recognition.monomonial = ['+',]
+            input_recognition.dict_index = 0
+            input_recognition.my_dict = {}
 
-        self.indx_coefficient = int(input("Coefficient: "))
-        self.coefficient = myVar[self.indx_coefficient][0]
-        print("Set coefficient to: "+ str(self.coefficient))
+            input_recognition.run_input()
+            my_polymonial = input_recognition.my_dict
+            print("this: "+ str(my_polymonial))
+            print("Hit Enter to continue...")
+            input('')
 
-        self.variable = 'x'
+        elif tag_application in tag_derivate_guide:
+            print("app 3")
+            print("Hit Enter to continue...")
+            input('')
 
-        self.indx_exponent = int(input("Exponent: "))
-        self.exponent = myVar[self.indx_exponent][0]
-        print("Set exponent to: "+ str(self.exponent))
+        elif tag_application in tag_run_derivate:
+            print("app 4")
+            from derivate_coefficient import MyDeriv
+            run_deriv = MyDeriv()
+            #input_recognition = InputRecognition()
+            #input_recognition.run_input()
+            #myVar = input_recognition.return_my_polymonial()
+            #run_deriv.run()
+            print("Hit Enter to continue...")
+            input('')
 
-    def update_my_deriv(self, coefficient, variable, exponent):
-        ''' docstring '''
-        self.coefficient = coefficient
-        self.variable = variable
-        self.exponent = exponent
+        elif tag_application in tag_linear2p_guide:
+            print("app 5")
+            print("Hit Enter to continue...")
+            input('')
 
-    def return_parent(self):
-        '''
-        Returns the calculated parent, split as two rows due
-        to length
-        '''
-        return_parent = f"{self.coefficient}{self.variable}^{self.exponent}"
-        return f"parent is: {return_parent}"
-    
-    def print_parent(self):
-        '''
-        Prints the calculated parent, split as two rows due
-        to length
-        '''
-        print_parent = f"{self.coefficient}{self.variable}^{self.exponent}"
-        print('    ------')
+        elif tag_application in tag_run_linerar2p:
+            print("app 6")
+            from linear_2p_equation import My2pEquation
+
+            print("Hit Enter to continue...")
+            input('')
+
+        elif tag_application in tag_exit:
+            print("Hit Enter to exit... ")
+            input('')
+            print("Exiting My Math Pilot")
+            global loop_run
+            loop_run = False
+        else:
+            print("There is no such application. please, try again.")
+            print("Hit Enter to continue...")
+            input('')
+
+def initialize():
+    ''' code '''
+    while loop_run == True:
+        print("--- Type the program you want to use: ---")
         print('')
-        print(f"    parent is: {print_parent}")
-        print('')
+        print('1: input guide')
+        print('2: run input')
+        print('3: derivate guide')
+        print('4: run derivate')
+        print('5: linear 2p equation guide')
+        print('6: run linear 2p equation')
+        tag_application = input("Run: ") 
+        run(tag_application)
 
-    def return_differenciation(self):
-        '''
-        Returns the calculated differenciation, split as three
-        rows due to length
-        '''
-        differ_1 = int(self.coefficient)* int(self.exponent)
-        differ_2 = int(self.exponent)- 1
-        return_differ_1 = f"{differ_1}"
-        return_differ_2 = f"{self.variable}^{differ_2}"
-        return f"differenciation is: {return_differ_1}{return_differ_2}"
-    
-    def print_differenciation(self):
-        '''
-        Prints the calculated differenciation, split as three
-        rows due to length
-        '''
-        differ_1 = int(self.coefficient)* int(self.exponent)
-        differ_2 = int(self.exponent)- 1
-        print_differ_1 = f"{differ_1}"
-        print_differ_2 = f"{self.variable}^{differ_2}"
-        print('    ------')
-        print('')
-        print(f"    differenciation is: {print_differ_1}{print_differ_2}")
-        print('')
-    
-    def run(self):
-        ''' bundle all strings to execute all '''
-        run_deriv.assign_my_deriv()
-        run_deriv.return_parent()
-        run_deriv.print_parent()
-        run_deriv.return_differenciation()
-        run_deriv.print_differenciation()
-
-run_deriv = MyDeriv()
-input_recognition = InputRecognition()
-
-input_recognition.run_input()
-myVar = input_recognition.return_my_polymonial()
-run_deriv.run()
+if __name__ == '__main__':
+    print("--- My Math Pilot ver 1.0 ---")
+    print("")
+    initialize()
 
 # End-of-file (EOF)

@@ -18,49 +18,58 @@ class MyPolymonial:
     def update_my_index(self, input_expression):
         ''' docstring '''
         self.input_expression = input_expression
+        print("the 'input_expression'"+ str(self.input_expression))
 
     def update_my_expression(self, new_index):
         ''' Captured from user input in later code '''
         self.input_expression = new_index
+        print('input_expression from polymonial_input: '+ str(self.input_expression))
 
     def update_my_input(self):
         ''' docstring '''
+        #input source
         new_index = str(input("input: "))
+        print('new_index from polymonial_input: '+ str(new_index))
         self.update_my_expression(new_index)
 
     def append_all_index(self):
         ''' Has to be done before verification '''
+        self.all_index.clear()
+        self.int_index.clear()
+        self.var_index.clear()
+        self.opr_index.clear()
+        print('all_index from polymonial_input should be cleared')
         for i in self.input_expression:
             # how to shorten?
             if i in LEGAL_INTEGERS or i in LEGAL_LETTERS_OPERATORS or i in LEGAL_LETTERS_VAR:
                 self.all_index.append(i)
-                print('test: '+ str(self.all_index))
+                print('(polymonial_input) all index test: '+ str(self.all_index))
             else:
-                print(str(i)+ " will be discarded")
+                print(str(i)+ " will be discarded (polymonial_input)")
 
     def verify_all_index(self):
         ''' Verification has to be done after append_all_index '''
         for i in self.all_index:
             if i in LEGAL_INTEGERS:
-                print(i + ' is an integer')
+                #print(i + ' is an integer (polymonial_input)')
                 self.int_index.append(int(i))
                 self.var_index.append(None)
                 self.opr_index.append(None)
 
             elif i in LEGAL_LETTERS_VAR:
-                print(i + ' is a variable')
+                #print(i + ' is a variable (polymonial_input)')
                 self.int_index.append(None)
                 self.var_index.append(i)
                 self.opr_index.append(None)
 
 
             elif i in LEGAL_LETTERS_OPERATORS:
-                print(i + ' is an operator')
+                #print(i + ' is an operator (polymonial_input)')
                 self.int_index.append(None)
                 self.var_index.append(None)
                 self.opr_index.append(i)
             else:
-                print(i + ' is illegal and will be discarded')
+                #print(i + ' is illegal and will be discarded (polymonial_input)')
                 continue
 
     def return_all_index(self):
@@ -81,11 +90,10 @@ class MyPolymonial:
 
     def print_index(self):
         ''' user's feedback '''
-        print('all: '+ str(self.all_index))
-        print('int: '+ str(self.int_index))
-        print('var: '+ str(self.var_index))
-        print('opr: '+ str(self.opr_index))
-
+        print('polymonial_input all: '+ str(self.all_index))
+        print('polymonial_input int: '+ str(self.int_index))
+        print('polymonial_input var: '+ str(self.var_index))
+        print('polymonial_input opr: '+ str(self.opr_index))
 
     def run(self):
         ''' docstring '''
@@ -93,6 +101,18 @@ class MyPolymonial:
         self.append_all_index()
         self.verify_all_index()
         self.print_index()
+        
+
+    def reset(self):
+        self.all_index.clear()
+        self.int_index.clear()
+        self.var_index.clear()
+        self.opr_index.clear()
+        print('attempted to clear polymonial_input:')
+        print(self.all_index)
+        print(self.int_index)
+        print(self.var_index)
+        print(self.opr_index)
 
 '''
 new_polynomial = MyPolymonial()

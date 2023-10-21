@@ -11,6 +11,7 @@ class InputRecognition():
         # first is always positive
         self.monomonial = ['+',]
         self.dict_index = 0
+        # reset this!
         self.my_dict = {
 
         }
@@ -18,11 +19,11 @@ class InputRecognition():
     def print_all(self):
         ''' docstring '''
         for x in self.int_index:
-            print(x)
+            print('(input_recognition) '+ str(x))
         for y in self.var_index:
-            print(y)
+            print('(input_recognition) '+ str(y))
         for z in self.opr_index:
-            print(z)
+            print('(input_recognition) '+ str(z))
 
     def split(self):
         ''' docstring'''
@@ -61,10 +62,13 @@ class InputRecognition():
     
     def print_my_polymonial(self):
         ''' docstring '''
-        print(self.my_dict)
+        print('(input_recognition)'+ str(self.my_dict))
 
     def run_input(self):
         ''' test function '''
+        self.my_dict.clear()
+        print(self.my_dict)
+
         my_polymonial.update_my_input()
         my_polymonial.append_all_index()
         my_polymonial.verify_all_index()
