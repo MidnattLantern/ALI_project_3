@@ -1,57 +1,58 @@
 
-tag_run_input = ['1', 'input']
-tag_derivate_guide = ['2', 'derivate guide']
-tag_count_coefficient = ['3', 'count coefficient']
-tag_linerar_equation = ['4', 'count linear 2p equation']
+tag_input_guide = ['1', 'input guide']
+tag_run_input = ['2', 'run input']
+tag_derivate_guide = ['3', 'derivate guide']
+tag_run_derivate = ['4', 'run derivate']
+tag_linear2p_guide = ['5', 'linear 2p equation guide']
+tag_run_linerar2p = ['6', 'run linear 2p equation']
+tag_exit = ['halt', 'exit', 'quit', 'stop']
 
+loop_run = True
 tag_application = None
 my_polymonial = {
 
 }
 
 def run(tag_application):
-    ''' docstring '''
-    if tag_application in tag_run_input:
-        global my_polymonial
-        from input_recognition import InputRecognition
-        new_polynomial = InputRecognition()
-        new_polynomial.run_input()
-        my_polymonial = new_polynomial.return_my_polymonial()
-        print(my_polymonial)
-    elif tag_application in tag_derivate_guide:
-        f = open('derivate_guide.txt', encoding='utf-8')
-        lines = f.read()
-        f.close()
-        print(lines)
-    elif tag_application in tag_count_coefficient:
-        from derivate_coefficient import MyDeriv
-        my_deriv = MyDeriv()
-        my_deriv.update_my_input()
-        my_deriv.return_parent()
-        my_deriv.print_parent()
-        my_deriv.return_differenciation()
-        my_deriv.print_differenciation()
-    elif tag_application in tag_linerar_equation:
-        from linear_2p_equation import My2pEquation
-        run_2p_equation = My2pEquation()
-        input_recognition = InputRecognition()
-        input_recognition.run_input()
-        run_2p_equation.run()
-    else:
-        print("try again")
+        ''' docstring '''
+        if tag_application in tag_input_guide:
+            print("app 1")
+        elif tag_application in tag_run_input:
+            print("app 2")
+        elif tag_application in tag_derivate_guide:
+            print("app 3")
+        elif tag_application in tag_run_derivate:
+            print("app 4")
+        elif tag_application in tag_linear2p_guide:
+            print("app 5")
+        elif tag_application in tag_run_linerar2p:
+            print("app 6")
+        elif tag_application in tag_exit:
+            print("Exiting My Math Pilot")
+            global loop_run
+            loop_run = False
+        else:
+            print("There is no such application. please, try again.")
+            print("Hit Enter to continue...")
+            input('')
 
 def initialize():
     ''' code '''
-    
-    print("--- Type the program you want to use: ---")
-    print("1: input")
-    print("2: derivate guide")
-    print("3: count countefficient")
-    print("4: count linear 2p equation")
-    tag_application = input("Run: ") 
-    run(tag_application)
+    while loop_run == True:
+        print("--- Type the program you want to use: ---")
+        print('')
+        print('1: input guide')
+        print('2: run input')
+        print('3: derivate guide')
+        print('4: run derivate')
+        print('5', 'linear 2p equation guide')
+        print('6', 'run linear 2p equation')
+        tag_application = input("Run: ") 
+        run(tag_application)
 
 if __name__ == '__main__':
+    print("--- My Math Pilot ver 1.0 ---")
+    print("")
     initialize()
 
 # End-of-file (EOF)
