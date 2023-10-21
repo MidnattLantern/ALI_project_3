@@ -1,3 +1,5 @@
+from input_recognition import InputRecognition
+
 ''' docstring '''
 
 

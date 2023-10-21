@@ -32,10 +32,11 @@ def run(tag_application):
         my_deriv.return_differenciation()
         my_deriv.print_differenciation()
     elif tag_application in tag_linerar_equation:
-        from linear_2p_equation import myLinear2pEquation
-        my_2p = myLinear2pEquation()
-        my_2p.update_my_input()
-        my_2p.calculate_2p()
+        from linear_2p_equation import My2pEquation
+        run_2p_equation = My2pEquation()
+        input_recognition = InputRecognition()
+        input_recognition.run_input()
+        run_2p_equation.run()
     else:
         print("try again")
 
@@ -47,7 +48,6 @@ def initialize():
     print("2: derivate guide")
     print("3: count countefficient")
     print("4: count linear 2p equation")
-
     tag_application = input("Run: ") 
     run(tag_application)
 
