@@ -9,12 +9,6 @@ my_polymonial = {
 
 }
 
-print("--- Type the program you want to use: ---")
-print("1: input")
-print("2: derivate guide")
-print("3: count countefficient")
-print("4: count linear 2p equation")
-
 def run(tag_application):
     ''' docstring '''
     if tag_application in tag_run_input:
@@ -45,7 +39,19 @@ def run(tag_application):
     else:
         print("try again")
 
-tag_application = input("Run: ") 
-run(tag_application)
+def initialize():
+    ''' code '''
+    
+    print("--- Type the program you want to use: ---")
+    print("1: input")
+    print("2: derivate guide")
+    print("3: count countefficient")
+    print("4: count linear 2p equation")
+
+    tag_application = input("Run: ") 
+    run(tag_application)
+
+if __name__ == '__main__':
+    initialize()
 
 # End-of-file (EOF)
