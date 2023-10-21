@@ -20,7 +20,7 @@ class MyDeriv():
     def assign_my_deriv(self):
         ''' docstring '''
         print("")
-        print("--- 2-point Equation ---")
+        print("--- Derivate ---")
         print("Use the index for any monomonial you've assigned,")
         print("monomonials containing a variable will be rejected")
         print("Your polymonials:")
@@ -28,11 +28,13 @@ class MyDeriv():
 
         self.indx_coefficient = int(input("Coefficient: "))
         self.coefficient = myVar[self.indx_coefficient][0]
+        print("Set coefficient to: "+ str(self.coefficient))
 
         self.variable = 'x'
 
         self.indx_exponent = int(input("Exponent: "))
         self.exponent = myVar[self.indx_exponent][0]
+        print("Set exponent to: "+ str(self.exponent))
 
     def update_my_deriv(self, coefficient, variable, exponent):
         ''' docstring '''
@@ -54,15 +56,20 @@ class MyDeriv():
         to length
         '''
         print_parent = f"{self.coefficient}{self.variable}^{self.exponent}"
-        print(f"parent is: {print_parent}")
+        print('    ------')
+        print('')
+        print(f"    parent is: {print_parent}")
+        print('')
 
     def return_differenciation(self):
         '''
         Returns the calculated differenciation, split as three
         rows due to length
         '''
-        return_differ_1 = f"{self.coefficient* self.exponent}"
-        return_differ_2 = f"{self.variable}^{self.exponent- 1}"
+        differ_1 = int(self.coefficient)* int(self.exponent)
+        differ_2 = int(self.exponent)- 1
+        return_differ_1 = f"{differ_1}"
+        return_differ_2 = f"{self.variable}^{differ_2}"
         return f"differenciation is: {return_differ_1}{return_differ_2}"
     
     def print_differenciation(self):
@@ -70,15 +77,28 @@ class MyDeriv():
         Prints the calculated differenciation, split as three
         rows due to length
         '''
-        print_differ_1 = f"{self.coefficient* self.exponent}"
-        print_differ_2 = f"{self.variable}^{self.exponent- 1}"
-        print(f"differenciation is: {print_differ_1}{print_differ_2}")
+        differ_1 = int(self.coefficient)* int(self.exponent)
+        differ_2 = int(self.exponent)- 1
+        print_differ_1 = f"{differ_1}"
+        print_differ_2 = f"{self.variable}^{differ_2}"
+        print('    ------')
+        print('')
+        print(f"    differenciation is: {print_differ_1}{print_differ_2}")
+        print('')
+    
+    def run(self):
+        ''' bundle all strings to execute all '''
+        run_deriv.assign_my_deriv()
+        run_deriv.return_parent()
+        run_deriv.print_parent()
+        run_deriv.return_differenciation()
+        run_deriv.print_differenciation()
 
 run_deriv = MyDeriv()
 input_recognition = InputRecognition()
 
 input_recognition.run_input()
 myVar = input_recognition.return_my_polymonial()
-run_deriv.assign_my_deriv()
+run_deriv.run()
 
 # End-of-file (EOF)
