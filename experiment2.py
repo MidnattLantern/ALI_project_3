@@ -1,89 +1,108 @@
-from input_recognition import InputRecognition
+tag_input_guide = ['1', 'input guide']
+tag_run_input = ['2', 'run input']
+tag_derivate_guide = ['3', 'derivate guide']
+tag_run_derivate = ['4', 'run derivate']
+tag_linear2p_guide = ['5', 'linear 2p equation guide']
+tag_run_linerar2p = ['6', 'run linear 2p equation']
+tag_exit = ['99', 'halt', 'exit', 'quit', 'stop', 'close']
 
-class My2pEquation():
-    ''' docstring '''
-    def __init__(self):
-        self.x1 = None
-        self.x2 = None
-        self.y1 = None
-        self.y2 = None
-        self.indx_x1 = None
-        self.indx_x2 = None
-        self.indx_y1 = None
-        self.indx_y2 = None
+loop_run = True
+tag_application = None
+my_polymonial = {
 
-    def my_var(self):
+}
+
+def run(tag_application):
         ''' docstring '''
-        self.myVar = {
+        if tag_application in tag_input_guide:
+            print("app 1")
+            print("Hit Enter to continue...")
+            input('')
 
-        }
+        elif tag_application in tag_run_input:
+            print("app 2")
+            global my_polymonial
+            my_polymonial.clear()
+            from input_recognition import InputRecognition
+            from polymonial_input import MyPolymonial
+            input_recognition = InputRecognition()
+            poly = MyPolymonial()
 
-    def assign_2p_indx(self):
-        ''' docstring '''
-        print("")
-        print("--- 2-point Equation ---")
-        print("Use the index for any monomonial you've assigned,")
-        print("monomonials containing a variable will be rejected")
-        print("Your polymonials:")
-        print(myVar)
-        self.indx_x1 = int(input("Point x1: "))
-        try:
-            self.x1 = myVar[self.indx_x1][0]
-            print("set x1 to: "+ str(self.x1))
-        except KeyError:
-            print("there is no monomonial for this index")
+            poly.reset()
+            print(poly.all_index)
+            print(poly.int_index)
+            print(poly.var_index)
+            print(poly.opr_index)
+            input_recognition.all_index = []
+            input_recognition.int_index = []
+            input_recognition.var_index = []
+            input_recognition.opr_index = []
+            input_recognition.monomonial = ['+',]
+            input_recognition.dict_index = 0
+            input_recognition.my_dict = {}
 
-        self.indx_x2 = int(input("Point x2: "))
-        try:
-            self.x2 = myVar[self.indx_x2][0]
-            print("set x2 to: "+ str(self.x2))
-        except KeyError:
-            print("there is no monomonial for this index")
+            input_recognition.run_input()
+            my_polymonial = input_recognition.my_dict
+            print("this: "+ str(my_polymonial))
+            print("Hit Enter to continue...")
+            input('')
 
-        self.indx_y1 = int(input("Point y1: "))
-        try:
-            self.y1 = myVar[self.indx_y1][0]
-            print("set y1 to: "+ str(self.y1))
-        except KeyError:
-            print("there is no monomonial for this index")
+        elif tag_application in tag_derivate_guide:
+            print("app 3")
+            print("Hit Enter to continue...")
+            input('')
 
-        self.indx_y2 = int(input("Point y2: "))
-        try:
-            self.y2 = myVar[self.indx_y2][0]
-            print("set y2 to: "+ str(self.y2))
-        except KeyError:
-            print("there is no monomonial for this index")
+        elif tag_application in tag_run_derivate:
+            print("app 4")
+            from derivate_coefficient import MyDeriv
+            run_deriv = MyDeriv()
+            #input_recognition = InputRecognition()
+            #input_recognition.run_input()
+            #myVar = input_recognition.return_my_polymonial()
+            #run_deriv.run()
+            print("Hit Enter to continue...")
+            input('')
 
-    def reveal_2p_equation(self, x1, x2, y1, y2):
-        ''' checking that all are assigned a value '''
-        if all(var is not None for var in [x1, x2, y1, y2]):
-            try:
+        elif tag_application in tag_linear2p_guide:
+            print("app 5")
+            print("Hit Enter to continue...")
+            input('')
 
-                print('')
-                print('    '+ str(y2)+ ' - '+ (str(y1)))
-                print('k = ------------')
-                print('    '+ str(x2)+ ' - '+ (str(x1)))
-                print('')
+        elif tag_application in tag_run_linerar2p:
+            print("app 6")
+            from linear_2p_equation import My2pEquation
 
-                try:
-                    k = (int(y2) - int(y1)) / ( int(x2) - int(x1))
-                    print("k value for 2p equation is: "+ str(k))
-                except ZeroDivisionError:
-                    print("k value for 2p equation is: 0")
-            except ValueError:
-                print("Monomonials containing variables and/ or exponents are not supported.")
-                print("")
+            print("Hit Enter to continue...")
+            input('')
+
+        elif tag_application in tag_exit:
+            print("Hit Enter to exit... ")
+            input('')
+            print("Exiting My Math Pilot")
+            global loop_run
+            loop_run = False
         else:
-            print("Error: either was assigned an index for monomonial that does not exist")
-    
-    def run(self):
-        ''' only function to use '''
-        self.assign_2p_indx()
-        self.reveal_2p_equation(self.x1, self.x2, self.y1, self.y2)
+            print("There is no such application. please, try again.")
+            print("Hit Enter to continue...")
+            input('')
 
-run_2p_equation = My2pEquation()
-input_recognition = InputRecognition()
+def initialize():
+    ''' code '''
+    while loop_run == True:
+        print("--- Type the program you want to use: ---")
+        print('')
+        print('1: input guide')
+        print('2: run input')
+        print('3: derivate guide')
+        print('4: run derivate')
+        print('5: linear 2p equation guide')
+        print('6: run linear 2p equation')
+        tag_application = input("Run: ") 
+        run(tag_application)
 
-input_recognition.run_input()
-myVar = input_recognition.return_my_polymonial()
-run_2p_equation.run()
+if __name__ == '__main__':
+    print("--- My Math Pilot ver 1.0 ---")
+    print("")
+    initialize()
+
+# End-of-file (EOF)

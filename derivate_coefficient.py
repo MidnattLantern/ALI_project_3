@@ -27,20 +27,20 @@ class MyDeriv():
         print("Your polymonials:")
         print(myVar)
 
-        self.indx_coefficient = int(input("Coefficient: "))
         try:
+            self.indx_coefficient = int(input("Coefficient: "))
             self.coefficient = myVar[self.indx_coefficient][0]
             print("Set coefficient to: "+ str(self.coefficient))
-        except KeyError:
+        except (ValueError, KeyError):
             print("there is no monomonial for this index")
 
         self.variable = 'x'
 
-        self.indx_exponent = int(input("Exponent: "))
         try:
+            self.indx_exponent = int(input("Exponent: "))
             self.exponent = myVar[self.indx_exponent][0]
             print("Set exponent to: "+ str(self.exponent))
-        except KeyError:
+        except (ValueError, KeyError):
             print("There is no monomonial for this index")
 
     def update_my_deriv(self, coefficient, variable, exponent):

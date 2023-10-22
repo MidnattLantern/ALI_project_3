@@ -27,20 +27,20 @@ class MyDeriv():
         print("Your polymonials:")
         print(myVar)
 
-        self.indx_coefficient = int(input("Coefficient: "))
         try:
+            self.indx_coefficient = int(input("Coefficient: "))
             self.coefficient = myVar[self.indx_coefficient][0]
             print("Set coefficient to: "+ str(self.coefficient))
-        except KeyError:
+        except (ValueError, KeyError):
             print("there is no monomonial for this index")
 
         self.variable = 'x'
 
-        self.indx_exponent = int(input("Exponent: "))
         try:
+            self.indx_exponent = int(input("Exponent: "))
             self.exponent = myVar[self.indx_exponent][0]
             print("Set exponent to: "+ str(self.exponent))
-        except KeyError:
+        except (ValueError, KeyError):
             print("There is no monomonial for this index")
 
     def update_my_deriv(self, coefficient, variable, exponent):
@@ -88,20 +88,24 @@ class MyDeriv():
         Prints the calculated differenciation, split as three
         rows due to length
         '''
-        try:
-            differ_1 = int(self.coefficient)* int(self.exponent)
-            differ_2 = int(self.exponent)- 1
-            print_differ_1 = f"{differ_1}"
-            print_differ_2 = f"{self.variable}^{differ_2}"
-            print('    ------')
-            print('')
-            print(f"    differenciation is: {print_differ_1}{print_differ_2}")
-            print('')
-        except (TypeError, ValueError):
-            print("    ------")
-            print("")
-            print("    Monomonials containing variables and/ or exponents are not supported.")
-            print("")
+        if all(var is not None for var in [self.coefficient, self.exponent]):
+            try:
+                differ_1 = int(self.coefficient)* int(self.exponent)
+                differ_2 = int(self.exponent)- 1
+                print_differ_1 = f"{differ_1}"
+                print_differ_2 = f"{self.variable}^{differ_2}"
+                print('    ------')
+                print('')
+                print(f"    differenciation is: {print_differ_1}{print_differ_2}")
+                print('')
+            except (ValueError):
+                print("    ------")
+                print("")
+                print("    Monomonials containing variables and/ or exponents are not supported.")
+                print("")
+        else:
+            print("Error: either was assigned an index for monomonial that does not exist")
+
 
     def run(self):
         ''' bundle all strings to execute all '''
