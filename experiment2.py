@@ -1,3 +1,4 @@
+import importlib
 tag_input_guide = ['1', 'input guide']
 tag_run_input = ['2', 'run input']
 tag_derivate_guide = ['3', 'derivate guide']
@@ -54,8 +55,8 @@ def run(tag_application):
 
         elif tag_application in tag_run_derivate:
             print("app 4")
-            from derivate_coefficient import MyDeriv
-            run_deriv = MyDeriv()
+            import derivate_coefficient
+            importlib.reload(derivate_coefficient)
             #input_recognition = InputRecognition()
             #input_recognition.run_input()
             #myVar = input_recognition.return_my_polymonial()
@@ -70,7 +71,8 @@ def run(tag_application):
 
         elif tag_application in tag_run_linerar2p:
             print("app 6")
-            from linear_2p_equation import My2pEquation
+            import linear_2p_equation
+            importlib.reload(linear_2p_equation)
 
             print("Hit Enter to continue...")
             input('')
