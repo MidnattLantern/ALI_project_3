@@ -63,6 +63,8 @@ def run(tag_application):
 
         elif tag_application in tag_linear2p_guide:
             print("app 5")
+            f = open("linear_2p_guide.txt")
+            print(f.read())
             print("Hit Enter to continue...")
             input('')
 
@@ -70,7 +72,6 @@ def run(tag_application):
             print("app 6")
             import linear_2p_equation
             importlib.reload(linear_2p_equation)
-
             print("Hit Enter to continue...")
             input('')
 

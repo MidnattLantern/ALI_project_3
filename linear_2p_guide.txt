@@ -1,0 +1,14 @@
+--- How to find k-value for 2-point equation ---
+
+- A linear 2-point equation is represented as:
+  y = kx + m
+- If the equation is consistent, which means
+that the changing value is always the same,
+then you can choose any two points on the graph
+- You should have a pair of x-values and y-values.
+- subtract the second value from its first:
+  y2 - y1
+  x2 -x1
+- divide the result of y by x:
+  y / x
+- This will return the k value in the formula.
