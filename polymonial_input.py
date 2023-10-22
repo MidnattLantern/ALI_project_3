@@ -1,9 +1,11 @@
 ''' Following characters can be used '''
-LEGAL_LETTERS_VAR = ['a', 'b', 'c', 'x', 'y', 'z']
-LEGAL_LETTERS_OPERATORS = ['+', '-', '*', '/', '^', 'sqrt']
-LEGAL_INTEGERS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+LEGAL_VAR = ['a', 'b', 'c', 'x', 'y', 'z']
+LEGAL_OPR = ['+', '-', '*', '/', '^', 'sqrt']
+LEGAL_INT = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 ''' all things filtering messy input into organised libraries '''
+
+
 class MyPolymonial:
     ''' all_index and input_expresson may store illegal characters,
      but int_index, var_index, opr_index wont, and only those will
@@ -24,8 +26,7 @@ class MyPolymonial:
         self.input_expression = new_index
 
     def update_my_input(self):
-        ''' docstring '''
-        #input source
+        ''' input source '''
         new_index = str(input("input: "))
         self.update_my_expression(new_index)
 
@@ -36,66 +37,59 @@ class MyPolymonial:
         self.var_index.clear()
         self.opr_index.clear()
         for i in self.input_expression:
-            # how to shorten?
-            if i in LEGAL_INTEGERS or i in LEGAL_LETTERS_OPERATORS or i in LEGAL_LETTERS_VAR:
+            if i in LEGAL_INT or i in LEGAL_OPR or i in LEGAL_VAR:
                 self.all_index.append(i)
             else:
-                print(str(i)+ " will be discarded")
+                print(str(i) + " will be discarded")
 
     def verify_all_index(self):
         ''' Verification has to be done after append_all_index '''
         for i in self.all_index:
-            if i in LEGAL_INTEGERS:
-                #print(i + ' is an integer (polymonial_input)')
+            if i in LEGAL_INT:
                 self.int_index.append(int(i))
                 self.var_index.append(None)
                 self.opr_index.append(None)
 
-            elif i in LEGAL_LETTERS_VAR:
-                #print(i + ' is a variable (polymonial_input)')
+            elif i in LEGAL_VAR:
                 self.int_index.append(None)
                 self.var_index.append(i)
                 self.opr_index.append(None)
 
-
-            elif i in LEGAL_LETTERS_OPERATORS:
-                #print(i + ' is an operator (polymonial_input)')
+            elif i in LEGAL_OPR:
                 self.int_index.append(None)
                 self.var_index.append(None)
                 self.opr_index.append(i)
             else:
-                #print(i + ' is illegal and will be discarded (polymonial_input)')
                 continue
 
     def return_all_index(self):
         ''' docstring '''
-        return(self.all_index)
-    
+        return (self.all_index)
+
     def return_int_index(self):
         ''' docstring '''
-        return(self.int_index)
-    
+        return (self.int_index)
+
     def return_var_index(self):
         ''' docstring '''
-        return(self.var_index)
-    
+        return (self.var_index)
+
     def return_opr_index(self):
         ''' docstring '''
-        return(self.opr_index)
+        return (self.opr_index)
 
     def print_index(self):
         ''' user's feedback '''
-        print('polymonial_input all: '+ str(self.all_index))
-        print('polymonial_input int: '+ str(self.int_index))
-        print('polymonial_input var: '+ str(self.var_index))
-        print('polymonial_input opr: '+ str(self.opr_index))
+        print('polymonial_input all: ' + str(self.all_index))
+        print('polymonial_input int: ' + str(self.int_index))
+        print('polymonial_input var: ' + str(self.var_index))
+        print('polymonial_input opr: ' + str(self.opr_index))
 
     def run(self):
         ''' docstring '''
         self.update_my_input()
         self.append_all_index()
         self.verify_all_index()
-        
 
     def reset(self):
         self.all_index.clear()
