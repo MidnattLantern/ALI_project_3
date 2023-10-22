@@ -27,7 +27,7 @@ class MyDeriv():
         print(myVar)
 
         try:
-            self.indx_coefficient = int(input("Coefficient: "))
+            self.indx_coefficient = int(input("Coefficient: \n"))
             self.coefficient = myVar[self.indx_coefficient][0]
             print("Set coefficient to: " + str(self.coefficient))
         except (ValueError, KeyError):
@@ -36,7 +36,7 @@ class MyDeriv():
         self.variable = 'x'
 
         try:
-            self.indx_exponent = int(input("Exponent: "))
+            self.indx_exponent = int(input("Exponent: \n"))
             self.exponent = myVar[self.indx_exponent][0]
             print("Set exponent to: " + str(self.exponent))
         except (ValueError, KeyError):
