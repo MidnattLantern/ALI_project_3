@@ -1,7 +1,5 @@
 from input_recognition import InputRecognition
 
-''' docstring '''
-
 class MyDeriv():
     ''' docstring '''
     def __init__(self):
@@ -30,7 +28,7 @@ class MyDeriv():
         try:
             self.indx_coefficient = int(input("Coefficient: "))
             self.coefficient = myVar[self.indx_coefficient][0]
-            print("Set coefficient to: "+ str(self.coefficient))
+            print("Set coefficient to: " + str(self.coefficient))
         except (ValueError, KeyError):
             print("there is no monomonial for this index")
 
@@ -39,7 +37,7 @@ class MyDeriv():
         try:
             self.indx_exponent = int(input("Exponent: "))
             self.exponent = myVar[self.indx_exponent][0]
-            print("Set exponent to: "+ str(self.exponent))
+            print("Set exponent to: " + str(self.exponent))
         except (ValueError, KeyError):
             print("There is no monomonial for this index")
 
@@ -56,7 +54,7 @@ class MyDeriv():
         '''
         return_parent = f"{self.coefficient}{self.variable}^{self.exponent}"
         return f"parent is: {return_parent}"
-    
+
     def print_parent(self):
         '''
         Prints the calculated parent, split as two rows due
@@ -68,21 +66,20 @@ class MyDeriv():
         print(f"    parent is: {print_parent}")
         print('')
 
-
     def return_differenciation(self):
         '''
         Returns the calculated differenciation, split as three
         rows due to length
         '''
         try:
-            differ_1 = int(self.coefficient)* int(self.exponent)
-            differ_2 = int(self.exponent)- 1
+            differ_1 = int(self.coefficient) * int(self.exponent)
+            differ_2 = int(self.exponent) - 1
             return_differ_1 = f"{differ_1}"
             return_differ_2 = f"{self.variable}^{differ_2}"
             return f"differenciation is: {return_differ_1}{return_differ_2}"
         except (TypeError, ValueError):
             pass
-    
+
     def print_differenciation(self):
         '''
         Prints the calculated differenciation, split as three
@@ -90,22 +87,23 @@ class MyDeriv():
         '''
         if all(var is not None for var in [self.coefficient, self.exponent]):
             try:
-                differ_1 = int(self.coefficient)* int(self.exponent)
-                differ_2 = int(self.exponent)- 1
+                differ_1 = int(self.coefficient) * int(self.exponent)
+                differ_2 = int(self.exponent) - 1
                 print_differ_1 = f"{differ_1}"
                 print_differ_2 = f"{self.variable}^{differ_2}"
-                print('    ------')
+                print('------')
                 print('')
-                print(f"    differenciation is: {print_differ_1}{print_differ_2}")
+                print(f"differenciation is: {print_differ_1}{print_differ_2}")
                 print('')
             except (ValueError):
-                print("    ------")
+                print("------")
                 print("")
-                print("    Monomonials containing variables and/ or exponents are not supported.")
+                print("Monomonials containing variables and/")
+                print("or exponents are not supported.")
                 print("")
         else:
-            print("Error: either was assigned an index for monomonial that does not exist")
-
+            print("Error: Either was assigned an index for")
+            print("amonomonial that does not exist")
 
     def run(self):
         ''' bundle all strings to execute all '''
@@ -114,8 +112,6 @@ class MyDeriv():
         run_deriv.print_parent()
         run_deriv.return_differenciation()
         run_deriv.print_differenciation()
-
-        #test
         self.coefficient = None
         self.variable = None
         self.exponent = None
