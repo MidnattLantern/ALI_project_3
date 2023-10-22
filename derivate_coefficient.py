@@ -1,5 +1,6 @@
 from input_recognition import InputRecognition
 
+
 class MyDeriv():
     ''' docstring '''
     def __init__(self):
@@ -102,8 +103,9 @@ class MyDeriv():
                 print("or exponents are not supported.")
                 print("")
         else:
+            print("")
             print("Error: Either was assigned an index for")
-            print("amonomonial that does not exist")
+            print("a monomonial that does not exist")
 
     def run(self):
         ''' bundle all strings to execute all '''
