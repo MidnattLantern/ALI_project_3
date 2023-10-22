@@ -1,6 +1,7 @@
 from polymonial_input import MyPolymonial
 my_polymonial = MyPolymonial()
 
+
 class InputRecognition():
     ''' docstring '''
     def __init__(self):
@@ -9,7 +10,7 @@ class InputRecognition():
         self.var_index = []
         self.opr_index = []
         # first is always positive
-        self.monomonial = ['+',]
+        self.monomonial = ['+', ]
         self.dict_index = 0
         # reset this!
         self.my_dict = {
@@ -19,11 +20,11 @@ class InputRecognition():
     def print_all(self):
         ''' docstring '''
         for x in self.int_index:
-            print('(input_recognition) '+ str(x))
+            print('(input_recognition) ' + str(x))
         for y in self.var_index:
-            print('(input_recognition) '+ str(y))
+            print('(input_recognition) ' + str(y))
         for z in self.opr_index:
-            print('(input_recognition) '+ str(z))
+            print('(input_recognition) ' + str(z))
 
     def split(self):
         ''' docstring'''
@@ -35,13 +36,13 @@ class InputRecognition():
         ''' docstring '''
         # generating each monomonial
         for i, _ in enumerate(self.all_index):
-            if self.int_index[i] != None:
+            if self.int_index[i] is not None:
                 self.monomonial.append(str(self.int_index[i]))
 
-            elif self.var_index[i] != None:
+            elif self.var_index[i] is not None:
                 self.monomonial.append(str(self.var_index[i]))
 
-            elif self.opr_index[i] != None:
+            elif self.opr_index[i] is not None:
                 if self.opr_index[i] == '^':
                     self.monomonial.append(str(self.opr_index[i]))
 
@@ -52,14 +53,14 @@ class InputRecognition():
                     self.monomonial.append(str(self.opr_index[i]))
 
             # checking final index, this cannot be an elif !!
-            if int(i+ 1) == int(len(self.all_index)):
+            if int(i + 1) == int(len(self.all_index)):
                 self.split()
                 self.monomonial.append(str(self.opr_index[i]))
 
     def return_my_polymonial(self):
         ''' docstring '''
-        return(self.my_dict)
-    
+        return (self.my_dict)
+
     def print_my_polymonial(self):
         ''' docstring '''
 
@@ -79,6 +80,9 @@ class InputRecognition():
         self.print_my_polymonial()
         self.return_my_polymonial()
 
+
 if __name__ == '__main__':
     input_recognition = InputRecognition()
     input_recognition.run_input()
+
+# End-of-file (EOF)

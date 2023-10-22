@@ -92,9 +92,14 @@ class MyPolymonial:
         self.verify_all_index()
 
     def reset(self):
+        ''' docstring '''
         self.all_index.clear()
         self.int_index.clear()
         self.var_index.clear()
         self.opr_index.clear()
+
+
+if __name__ == '__main__':
+    pass
 
 # End-of-file (EOF)
