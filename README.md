@@ -22,11 +22,11 @@ Features
 
 Future features
 ======
-- The current version of My Math Pilot only have two programs for mathematical tasks. The rabbit hole of mathematics is endless, and there could be more programs for a vast variety of mathematical tasks: such as reducing an expression/ input. i.e from: ( +3x −(x+5) ) to ( +2x -5 ).
-- The programs in the current version of My Math Pilot can store polymonials with variables and exponents, but they'll only accept polymonials with a positive or negarive whole number. In the future, My Math Pilot could accept decimals, accept variables and proccess them in a way appropriate for mathematics.
-- In the future, monomials with exponents could be proccessed to a number, instead of getting rejected. i.e +2^3 returns +8.
-- The mathmatical tasks in the current version of My Math Pilot prompts the user to enter their equation over again. In the future, they could load the storage that was updated by the input program (2).
-- Outputs from mathmatical tasks could be stored to other advanced mathmatical tasks, such as outputs from derivate to be used for integrals.
+- My Math Pilot currently has only two programs for mathematical tasks, but the possibilities of mathematics are endless. More programs could be added for a vast variety of mathematical tasks, such as expression reduction, for example, from (+3x − (x+5)) to (+2x - 5).
+- At present, the programs can store polynomials with variables and exponents, but they only accept polynomials with positive or negative whole numbers. In the future, My Math Pilot could accept decimals, and variables and process them in a way appropriate for mathematics.
+- Monomials with exponents are rejected currently, but in the future, they could be processed to a number, for example, +2^3 could return +8.
+- Inputs to mathematical tasks need to be entered again each time. But in the future, they could load the storage that was updated by the input program (2).
+- Outputs from mathematical tasks could be stored for other advanced mathematical tasks, such as outputs from derivatives to be used for integrals.
 
 Wireframes
 ======
