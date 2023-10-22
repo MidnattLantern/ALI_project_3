@@ -16,7 +16,7 @@ pickleshare==0.7.5
 platformdirs==3.11.0
 prompt-toolkit==3.0.38
 ptyprocess==0.7.0
-pure-eval==0.2.2
+pure-eval==0.2.2
 pygame==2.5.0
 Pygments==2.15.0
 pylint==3.0.1

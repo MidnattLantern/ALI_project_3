@@ -1,4 +1,5 @@
 import importlib
+
 tag_input_guide = ['1', 'input guide']
 tag_run_input = ['2', 'run input']
 tag_derivate_guide = ['3', 'derivate guide']
@@ -7,7 +8,7 @@ tag_linear2p_guide = ['5', 'linear 2p equation guide']
 tag_run_linerar2p = ['6', 'run linear 2p equation']
 tag_exit = ['99', 'halt', 'exit', 'quit', 'stop', 'close']
 
-loop_run = True
+LOOP_RUN = True
 tag_application = None
 my_polymonial = {
 
@@ -71,8 +72,8 @@ def run(tag_application):
         print("Hit Enter to exit... ")
         input('\n')
         print("Exiting My Math Pilot")
-        global loop_run
-        loop_run = False
+        global LOOP_RUN
+        LOOP_RUN = False
     else:
         print("There is no such application. please, try again.")
         print("Hit Enter to continue...")
@@ -81,7 +82,7 @@ def run(tag_application):
 
 def initialize():
     ''' code '''
-    while loop_run is True:
+    while LOOP_RUN is True:
         print("--- Type the program you want to use: ---")
         print('')
         print('1: input guide')
