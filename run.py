@@ -16,23 +16,19 @@ my_polymonial = {
 def run(tag_application):
         ''' docstring '''
         if tag_application in tag_input_guide:
-            print("app 1")
             f = open("input_guide.txt")
             print(f.read())
             print("Hit Enter to continue...")
             input('')
 
         elif tag_application in tag_run_input:
-            print("app 2")
             global my_polymonial
             my_polymonial.clear()
             from input_recognition import InputRecognition
             from polymonial_input import MyPolymonial
             input_recognition = InputRecognition()
             poly = MyPolymonial()
-
             poly.reset()
-
             input_recognition.all_index = []
             input_recognition.int_index = []
             input_recognition.var_index = []
@@ -40,7 +36,6 @@ def run(tag_application):
             input_recognition.monomonial = ['+',]
             input_recognition.dict_index = 0
             input_recognition.my_dict = {}
-
             input_recognition.run_input()
             my_polymonial = input_recognition.my_dict
             print("this: "+ str(my_polymonial))
@@ -48,28 +43,24 @@ def run(tag_application):
             input('')
 
         elif tag_application in tag_derivate_guide:
-            print("app 3")
             f = open("derivate_guide.txt")
             print(f.read())
             print("Hit Enter to continue...")
             input('')
 
         elif tag_application in tag_run_derivate:
-            print("app 4")
             import derivate_coefficient
             importlib.reload(derivate_coefficient)
             print("Hit Enter to continue...")
             input('')
 
         elif tag_application in tag_linear2p_guide:
-            print("app 5")
             f = open("linear_2p_guide.txt")
             print(f.read())
             print("Hit Enter to continue...")
             input('')
 
         elif tag_application in tag_run_linerar2p:
-            print("app 6")
             import linear_2p_equation
             importlib.reload(linear_2p_equation)
             print("Hit Enter to continue...")

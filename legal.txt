@@ -1,8 +1,0 @@
---- Legal input ---
-- Input must be a whole number
-        0  1  2  3  4
-        5  6  7  8  9  
-- Legal variables:
-        a  b  c  x  y  z
-- Legal operators:
-        +  -  *  /  ^ sqrt
