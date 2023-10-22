@@ -62,12 +62,10 @@ class InputRecognition():
     
     def print_my_polymonial(self):
         ''' docstring '''
-        print('(input_recognition)'+ str(self.my_dict))
 
     def run_input(self):
         ''' test function '''
         self.my_dict.clear()
-        print(self.my_dict)
 
         my_polymonial.update_my_input()
         my_polymonial.append_all_index()
@@ -80,16 +78,6 @@ class InputRecognition():
         self.return_my_polymonial()
         self.print_my_polymonial()
         self.return_my_polymonial()
-
-'''
-input_recognition = InputRecognition()
-input_recognition.run_input()
-
-new_polynomial = MyPolymonial()
-new_polynomial.run()
-
-# recomended string
-'''
 
 if __name__ == '__main__':
     input_recognition = InputRecognition()

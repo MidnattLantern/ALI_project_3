@@ -17,6 +17,8 @@ def run(tag_application):
         ''' docstring '''
         if tag_application in tag_input_guide:
             print("app 1")
+            f = open("input_guide.txt")
+            print(f.read())
             print("Hit Enter to continue...")
             input('')
 
@@ -30,10 +32,7 @@ def run(tag_application):
             poly = MyPolymonial()
 
             poly.reset()
-            print(poly.all_index)
-            print(poly.int_index)
-            print(poly.var_index)
-            print(poly.opr_index)
+
             input_recognition.all_index = []
             input_recognition.int_index = []
             input_recognition.var_index = []
@@ -50,6 +49,8 @@ def run(tag_application):
 
         elif tag_application in tag_derivate_guide:
             print("app 3")
+            f = open("derivate_guide.txt")
+            print(f.read())
             print("Hit Enter to continue...")
             input('')
 
@@ -57,10 +58,6 @@ def run(tag_application):
             print("app 4")
             import derivate_coefficient
             importlib.reload(derivate_coefficient)
-            #input_recognition = InputRecognition()
-            #input_recognition.run_input()
-            #myVar = input_recognition.return_my_polymonial()
-            #run_deriv.run()
             print("Hit Enter to continue...")
             input('')
 

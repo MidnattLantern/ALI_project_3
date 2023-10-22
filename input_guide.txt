@@ -1,0 +1,21 @@
+--- How input works ---
+
+My Math Pilot can recognise and understand
+your input by generating a polynomial and
+monomials. When asked for input, you can
+type in an expression such as "2x^3+4y-5x^5".
+In this example, My Math Pilot will generate
+three monomials:
+  ( +2x^3 )
+  ( +4y )
+  ( -5x^5 )
+Each monomial will be assigned a unique
+index number:
+  0 for ( +2x^3 )
+  1 for ( +4y )
+  2 for ( -5x^5 ) 
+When you run a program, such as a linear 2p equation
+you will be prompted to enter the index number
+for the corresponding monomial when asked
+for input. This way, My Math Pilot can process
+your input accurately.

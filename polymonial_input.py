@@ -18,18 +18,15 @@ class MyPolymonial:
     def update_my_index(self, input_expression):
         ''' docstring '''
         self.input_expression = input_expression
-        print("the 'input_expression'"+ str(self.input_expression))
 
     def update_my_expression(self, new_index):
         ''' Captured from user input in later code '''
         self.input_expression = new_index
-        print('input_expression from polymonial_input: '+ str(self.input_expression))
 
     def update_my_input(self):
         ''' docstring '''
         #input source
         new_index = str(input("input: "))
-        print('new_index from polymonial_input: '+ str(new_index))
         self.update_my_expression(new_index)
 
     def append_all_index(self):
@@ -38,14 +35,12 @@ class MyPolymonial:
         self.int_index.clear()
         self.var_index.clear()
         self.opr_index.clear()
-        print('all_index from polymonial_input should be cleared')
         for i in self.input_expression:
             # how to shorten?
             if i in LEGAL_INTEGERS or i in LEGAL_LETTERS_OPERATORS or i in LEGAL_LETTERS_VAR:
                 self.all_index.append(i)
-                print('(polymonial_input) all index test: '+ str(self.all_index))
             else:
-                print(str(i)+ " will be discarded (polymonial_input)")
+                print(str(i)+ " will be discarded")
 
     def verify_all_index(self):
         ''' Verification has to be done after append_all_index '''
@@ -100,7 +95,6 @@ class MyPolymonial:
         self.update_my_input()
         self.append_all_index()
         self.verify_all_index()
-        self.print_index()
         
 
     def reset(self):
@@ -108,23 +102,5 @@ class MyPolymonial:
         self.int_index.clear()
         self.var_index.clear()
         self.opr_index.clear()
-        print('attempted to clear polymonial_input:')
-        print(self.all_index)
-        print(self.int_index)
-        print(self.var_index)
-        print(self.opr_index)
-
-'''
-new_polynomial = MyPolymonial()
-new_polynomial.run()
-'''
-
-'''
-new_polynomial = MyPolymonial()
-new_polynomial.update_my_input()
-new_polynomial.append_all_index()
-new_polynomial.verify_all_index()
-new_polynomial.print_index()
-'''
 
 # End-of-file (EOF)
