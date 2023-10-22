@@ -1,15 +1,16 @@
 from input_recognition import InputRecognition
 
-''' docstring '''
-
-class MyDeriv():
+class My2pEquation():
     ''' docstring '''
     def __init__(self):
-        self.coefficient = None
-        self.variable = None
-        self.exponent = None
-        self.indx_coefficient = None
-        self.indx_exponent = None
+        self.x1 = None
+        self.x2 = None
+        self.y1 = None
+        self.y2 = None
+        self.indx_x1 = None
+        self.indx_x2 = None
+        self.indx_y1 = None
+        self.indx_y2 = None
 
     def my_var(self):
         ''' docstring '''
@@ -17,117 +18,73 @@ class MyDeriv():
 
         }
 
-    def assign_my_deriv(self):
-
+    def assign_2p_indx(self):
         ''' docstring '''
         print("")
-        print("--- Derivate ---")
+        print("--- 2-point Equation ---")
         print("Use the index for any monomonial you've assigned,")
         print("monomonials containing a variable will be rejected")
         print("Your polymonials:")
         print(myVar)
-
         try:
-            self.indx_coefficient = int(input("Coefficient: "))
-            self.coefficient = myVar[self.indx_coefficient][0]
-            print("Set coefficient to: "+ str(self.coefficient))
-        except (ValueError, KeyError):
+            self.indx_x1 = int(input("Point x1: "))
+            self.x1 = myVar[self.indx_x1][0]
+            print("set x1 to: "+ str(self.x1))
+        except (KeyError, ValueError):
             print("there is no monomonial for this index")
 
-        self.variable = 'x'
+        try:
+            self.indx_x2 = int(input("Point x2: "))
+            self.x2 = myVar[self.indx_x2][0]
+            print("set x2 to: "+ str(self.x2))
+        except (KeyError, ValueError):
+            print("there is no monomonial for this index")
 
         try:
-            self.indx_exponent = int(input("Exponent: "))
-            self.exponent = myVar[self.indx_exponent][0]
-            print("Set exponent to: "+ str(self.exponent))
-        except (ValueError, KeyError):
-            print("There is no monomonial for this index")
+            self.indx_y1 = int(input("Point y1: "))
+            self.y1 = myVar[self.indx_y1][0]
+            print("set y1 to: "+ str(self.y1))
+        except (KeyError, ValueError):
+            print("there is no monomonial for this index")
 
-    def update_my_deriv(self, coefficient, variable, exponent):
-        ''' docstring '''
-        self.coefficient = coefficient
-        self.variable = variable
-        self.exponent = exponent
-
-    def return_parent(self):
-        '''
-        Returns the calculated parent, split as two rows due
-        to length
-        '''
-        return_parent = f"{self.coefficient}{self.variable}^{self.exponent}"
-        return f"parent is: {return_parent}"
-    
-    def print_parent(self):
-        '''
-        Prints the calculated parent, split as two rows due
-        to length
-        '''
-        print_parent = f"{self.coefficient}{self.variable}^{self.exponent}"
-        print('    ------')
-        print('')
-        print(f"    parent is: {print_parent}")
-        print('')
-
-
-    def return_differenciation(self):
-        '''
-        Returns the calculated differenciation, split as three
-        rows due to length
-        '''
         try:
-            differ_1 = int(self.coefficient)* int(self.exponent)
-            differ_2 = int(self.exponent)- 1
-            return_differ_1 = f"{differ_1}"
-            return_differ_2 = f"{self.variable}^{differ_2}"
-            return f"differenciation is: {return_differ_1}{return_differ_2}"
-        except (TypeError, ValueError):
-            pass
-    
-    def print_differenciation(self):
-        '''
-        Prints the calculated differenciation, split as three
-        rows due to length
-        '''
-        if all(var is not None for var in [self.coefficient, self.exponent]):
+            self.indx_y2 = int(input("Point y2: "))
+            self.y2 = myVar[self.indx_y2][0]
+            print("set y2 to: "+ str(self.y2))
+        except (KeyError, ValueError):
+            print("there is no monomonial for this index")
+
+    def reveal_2p_equation(self, x1, x2, y1, y2):
+        ''' checking that all are assigned a value '''
+        if all(var is not None for var in [x1, x2, y1, y2]):
             try:
-                differ_1 = int(self.coefficient)* int(self.exponent)
-                differ_2 = int(self.exponent)- 1
-                print_differ_1 = f"{differ_1}"
-                print_differ_2 = f"{self.variable}^{differ_2}"
-                print('    ------')
+
                 print('')
-                print(f"    differenciation is: {print_differ_1}{print_differ_2}")
+                print('    '+ str(y2)+ ' - '+ (str(y1)))
+                print('k = ------------')
+                print('    '+ str(x2)+ ' - '+ (str(x1)))
                 print('')
-            except (ValueError):
-                print("    ------")
-                print("")
-                print("    Monomonials containing variables and/ or exponents are not supported.")
+
+                try:
+                    k = (int(y2) - int(y1)) / ( int(x2) - int(x1))
+                    print("k value for 2p equation is: "+ str(k))
+                except ZeroDivisionError:
+                    print("k value for 2p equation is: 0")
+            except ValueError:
+                print("Monomonials containing variables and/ or exponents are not supported.")
                 print("")
         else:
+            print("")
             print("Error: either was assigned an index for monomonial that does not exist")
-
-
+    
     def run(self):
-        ''' bundle all strings to execute all '''
-        run_deriv.assign_my_deriv()
-        run_deriv.return_parent()
-        run_deriv.print_parent()
-        run_deriv.return_differenciation()
-        run_deriv.print_differenciation()
+        ''' only function to use '''
+        self.assign_2p_indx()
+        self.reveal_2p_equation(self.x1, self.x2, self.y1, self.y2)
 
-        #test
-        self.coefficient = None
-        self.variable = None
-        self.exponent = None
-        self.indx_coefficient = None
-        self.indx_exponent = None
-
-
-run_deriv = MyDeriv()
+run_2p_equation = My2pEquation()
 input_recognition = InputRecognition()
 
 input_recognition.run_input()
 myVar = input_recognition.return_my_polymonial()
-run_deriv.run()
-
-# End-of-file (EOF)
+run_2p_equation.run()

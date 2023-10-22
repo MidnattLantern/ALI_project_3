@@ -26,32 +26,32 @@ class My2pEquation():
         print("monomonials containing a variable will be rejected")
         print("Your polymonials:")
         print(myVar)
-        self.indx_x1 = int(input("Point x1: "))
         try:
+            self.indx_x1 = int(input("Point x1: "))
             self.x1 = myVar[self.indx_x1][0]
             print("set x1 to: "+ str(self.x1))
-        except KeyError:
+        except (KeyError, ValueError):
             print("there is no monomonial for this index")
 
-        self.indx_x2 = int(input("Point x2: "))
         try:
+            self.indx_x2 = int(input("Point x2: "))
             self.x2 = myVar[self.indx_x2][0]
             print("set x2 to: "+ str(self.x2))
-        except KeyError:
+        except (KeyError, ValueError):
             print("there is no monomonial for this index")
 
-        self.indx_y1 = int(input("Point y1: "))
         try:
+            self.indx_y1 = int(input("Point y1: "))
             self.y1 = myVar[self.indx_y1][0]
             print("set y1 to: "+ str(self.y1))
-        except KeyError:
+        except (KeyError, ValueError):
             print("there is no monomonial for this index")
 
-        self.indx_y2 = int(input("Point y2: "))
         try:
+            self.indx_y2 = int(input("Point y2: "))
             self.y2 = myVar[self.indx_y2][0]
             print("set y2 to: "+ str(self.y2))
-        except KeyError:
+        except (KeyError, ValueError):
             print("there is no monomonial for this index")
 
     def reveal_2p_equation(self, x1, x2, y1, y2):
