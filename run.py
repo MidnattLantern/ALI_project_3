@@ -20,7 +20,7 @@ def run(tag_application):
         f = open("input_guide.txt")
         print(f.read())
         print("Hit Enter to continue...")
-        input('')
+        input('\n')
 
     elif tag_application in tag_run_input:
         global my_polymonial
@@ -39,44 +39,44 @@ def run(tag_application):
         input_recognition.my_dict = {}
         input_recognition.run_input()
         my_polymonial = input_recognition.my_dict
-        print("this: " + str(my_polymonial))
+        print("New monomials: " + str(my_polymonial))
         print("Hit Enter to continue...")
-        input('')
+        input('\n')
 
     elif tag_application in tag_derivate_guide:
         f = open("derivate_guide.txt")
         print(f.read())
         print("Hit Enter to continue...")
-        input('')
+        input('\n')
 
     elif tag_application in tag_run_derivate:
         import derivate_coefficient
         importlib.reload(derivate_coefficient)
         print("Hit Enter to continue...")
-        input('')
+        input('\n')
 
     elif tag_application in tag_linear2p_guide:
         f = open("linear_2p_guide.txt")
         print(f.read())
         print("Hit Enter to continue...")
-        input('')
+        input('\n')
 
     elif tag_application in tag_run_linerar2p:
         import linear_2p_equation
         importlib.reload(linear_2p_equation)
         print("Hit Enter to continue...")
-        input('')
+        input('\n')
 
     elif tag_application in tag_exit:
         print("Hit Enter to exit... ")
-        input('')
+        input('\n')
         print("Exiting My Math Pilot")
         global loop_run
         loop_run = False
     else:
         print("There is no such application. please, try again.")
         print("Hit Enter to continue...")
-        input('')
+        input('\n')
 
 
 def initialize():
@@ -90,7 +90,7 @@ def initialize():
         print('4: run derivate')
         print('5: linear 2p equation guide')
         print('6: run linear 2p equation')
-        tag_application = input("Run: ")
+        tag_application = input("Run: \n")
         run(tag_application)
 
 

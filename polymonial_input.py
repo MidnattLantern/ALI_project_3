@@ -27,7 +27,7 @@ class MyPolymonial:
 
     def update_my_input(self):
         ''' input source '''
-        new_index = str(input("input: "))
+        new_index = str(input("input: \n"))
         self.update_my_expression(new_index)
 
     def append_all_index(self):
