@@ -27,38 +27,55 @@ class My2pEquation():
         print("Your polymonials:")
         print(myVar)
         self.indx_x1 = int(input("Point x1: "))
-        self.x1 = myVar[self.indx_x1][0]
-        print("set x1 to: "+ str(self.x1))
+        try:
+            self.x1 = myVar[self.indx_x1][0]
+            print("set x1 to: "+ str(self.x1))
+        except KeyError:
+            print("there is no monomonial for this index")
 
         self.indx_x2 = int(input("Point x2: "))
-        self.x2 = myVar[self.indx_x2][0]
-        print("set x2 to: "+ str(self.x2))
+        try:
+            self.x2 = myVar[self.indx_x2][0]
+            print("set x2 to: "+ str(self.x2))
+        except KeyError:
+            print("there is no monomonial for this index")
 
         self.indx_y1 = int(input("Point y1: "))
-        self.y1 = myVar[self.indx_y1][0]
-        print("set y1 to: "+ str(self.y1))
+        try:
+            self.y1 = myVar[self.indx_y1][0]
+            print("set y1 to: "+ str(self.y1))
+        except KeyError:
+            print("there is no monomonial for this index")
 
         self.indx_y2 = int(input("Point y2: "))
-        self.y2 = myVar[self.indx_y2][0]
-        print("set y2 to: "+ str(self.y2))
+        try:
+            self.y2 = myVar[self.indx_y2][0]
+            print("set y2 to: "+ str(self.y2))
+        except KeyError:
+            print("there is no monomonial for this index")
 
     def reveal_2p_equation(self, x1, x2, y1, y2):
         ''' checking that all are assigned a value '''
         if all(var is not None for var in [x1, x2, y1, y2]):
-
-            print('')
-            print('    '+ str(y2)+ ' - '+ (str(y1)))
-            print('k = ------------')
-            print('    '+ str(x2)+ ' - '+ (str(x1)))
-            print('')
-
             try:
-                k = (int(y2) - int(y1)) / ( int(x2) - int(x1))
-                print("k value for 2p equation is: "+ str(k))
-            except ZeroDivisionError:
-                print("k value for 2p equation is: 0")
+
+                print('')
+                print('    '+ str(y2)+ ' - '+ (str(y1)))
+                print('k = ------------')
+                print('    '+ str(x2)+ ' - '+ (str(x1)))
+                print('')
+
+                try:
+                    k = (int(y2) - int(y1)) / ( int(x2) - int(x1))
+                    print("k value for 2p equation is: "+ str(k))
+                except ZeroDivisionError:
+                    print("k value for 2p equation is: 0")
+            except ValueError:
+                print("Monomonials containing variables and/ or exponents are not supported.")
+                print("")
         else:
-            print("error: either of the point(s) are unassigned")
+            print("")
+            print("Error: either was assigned an index for monomonial that does not exist")
     
     def run(self):
         ''' only function to use '''
