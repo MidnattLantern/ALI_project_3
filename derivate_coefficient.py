@@ -1,4 +1,3 @@
-
 from input_recognition import InputRecognition
 
 ''' docstring '''
@@ -19,6 +18,7 @@ class MyDeriv():
         }
 
     def assign_my_deriv(self):
+
         ''' docstring '''
         print("")
         print("--- Derivate ---")
@@ -28,14 +28,20 @@ class MyDeriv():
         print(myVar)
 
         self.indx_coefficient = int(input("Coefficient: "))
-        self.coefficient = myVar[self.indx_coefficient][0]
-        print("Set coefficient to: "+ str(self.coefficient))
+        try:
+            self.coefficient = myVar[self.indx_coefficient][0]
+            print("Set coefficient to: "+ str(self.coefficient))
+        except KeyError:
+            print("there is no monomonial for this index")
 
         self.variable = 'x'
 
         self.indx_exponent = int(input("Exponent: "))
-        self.exponent = myVar[self.indx_exponent][0]
-        print("Set exponent to: "+ str(self.exponent))
+        try:
+            self.exponent = myVar[self.indx_exponent][0]
+            print("Set exponent to: "+ str(self.exponent))
+        except KeyError:
+            print("There is no monomonial for this index")
 
     def update_my_deriv(self, coefficient, variable, exponent):
         ''' docstring '''
@@ -62,31 +68,41 @@ class MyDeriv():
         print(f"    parent is: {print_parent}")
         print('')
 
+
     def return_differenciation(self):
         '''
         Returns the calculated differenciation, split as three
         rows due to length
         '''
-        differ_1 = int(self.coefficient)* int(self.exponent)
-        differ_2 = int(self.exponent)- 1
-        return_differ_1 = f"{differ_1}"
-        return_differ_2 = f"{self.variable}^{differ_2}"
-        return f"differenciation is: {return_differ_1}{return_differ_2}"
+        try:
+            differ_1 = int(self.coefficient)* int(self.exponent)
+            differ_2 = int(self.exponent)- 1
+            return_differ_1 = f"{differ_1}"
+            return_differ_2 = f"{self.variable}^{differ_2}"
+            return f"differenciation is: {return_differ_1}{return_differ_2}"
+        except (TypeError, ValueError):
+            pass
     
     def print_differenciation(self):
         '''
         Prints the calculated differenciation, split as three
         rows due to length
         '''
-        differ_1 = int(self.coefficient)* int(self.exponent)
-        differ_2 = int(self.exponent)- 1
-        print_differ_1 = f"{differ_1}"
-        print_differ_2 = f"{self.variable}^{differ_2}"
-        print('    ------')
-        print('')
-        print(f"    differenciation is: {print_differ_1}{print_differ_2}")
-        print('')
-    
+        try:
+            differ_1 = int(self.coefficient)* int(self.exponent)
+            differ_2 = int(self.exponent)- 1
+            print_differ_1 = f"{differ_1}"
+            print_differ_2 = f"{self.variable}^{differ_2}"
+            print('    ------')
+            print('')
+            print(f"    differenciation is: {print_differ_1}{print_differ_2}")
+            print('')
+        except (TypeError, ValueError):
+            print("    ------")
+            print("")
+            print("    Monomonials containing variables and/ or exponents are not supported.")
+            print("")
+
     def run(self):
         ''' bundle all strings to execute all '''
         run_deriv.assign_my_deriv()
@@ -94,6 +110,13 @@ class MyDeriv():
         run_deriv.print_parent()
         run_deriv.return_differenciation()
         run_deriv.print_differenciation()
+
+        #test
+        self.coefficient = None
+        self.variable = None
+        self.exponent = None
+        self.indx_coefficient = None
+        self.indx_exponent = None
 
 
 run_deriv = MyDeriv()

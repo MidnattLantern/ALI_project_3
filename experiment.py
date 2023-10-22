@@ -1,119 +1,129 @@
-''' Following characters can be used '''
-LEGAL_LETTERS_VAR = ['a', 'b', 'c', 'x', 'y', 'z']
-LEGAL_LETTERS_OPERATORS = ['+', '-', '*', '/', '^', 'sqrt']
-LEGAL_INTEGERS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+from input_recognition import InputRecognition
 
-''' all things filtering messy input into organised libraries '''
-class MyPolymonial:
-    ''' all_index and input_expresson may store illegal characters,
-     but int_index, var_index, opr_index wont, and only those will
-     be used for following steps '''
+''' docstring '''
+
+class MyDeriv():
+    ''' docstring '''
     def __init__(self):
-        # The "organised libraries"
-        self.all_index = []
-        self.int_index = []
-        self.var_index = []
-        self.opr_index = []
+        self.coefficient = None
+        self.variable = None
+        self.exponent = None
+        self.indx_coefficient = None
+        self.indx_exponent = None
 
-    def update_my_index(self, input_expression):
+    def my_var(self):
         ''' docstring '''
-        self.input_expression = input_expression
+        self.myVar = {
 
-    def update_my_expression(self, new_index):
-        ''' Captured from user input in later code '''
-        self.input_expression = new_index
+        }
 
-    def update_my_input(self):
+    def assign_my_deriv(self):
+
         ''' docstring '''
-        new_index = str(input("input: "))
-        self.update_my_expression(new_index)
+        print("")
+        print("--- Derivate ---")
+        print("Use the index for any monomonial you've assigned,")
+        print("monomonials containing a variable will be rejected")
+        print("Your polymonials:")
+        print(myVar)
 
-    def append_all_index(self):
-        ''' Has to be done before verification '''
-        for i in self.input_expression:
-            # how to shorten?
-            if i in LEGAL_INTEGERS or i in LEGAL_LETTERS_OPERATORS or i in LEGAL_LETTERS_VAR:
-                self.all_index.append(i)
-                print('test: '+ str(self.all_index))
-            else:
-                print(str(i)+ " will be discarded")
+        self.indx_coefficient = int(input("Coefficient: "))
+        try:
+            self.coefficient = myVar[self.indx_coefficient][0]
+            print("Set coefficient to: "+ str(self.coefficient))
+        except KeyError:
+            print("there is no monomonial for this index")
 
-    def verify_all_index(self):
-        ''' Verification has to be done after append_all_index '''
-        for i in self.all_index:
-            if i in LEGAL_INTEGERS:
-                print(i + ' is an integer')
-                self.int_index.append(int(i))
-                self.var_index.append(None)
-                self.opr_index.append(None)
+        self.variable = 'x'
 
-            elif i in LEGAL_LETTERS_VAR:
-                print(i + ' is a variable')
-                self.int_index.append(None)
-                self.var_index.append(i)
-                self.opr_index.append(None)
+        self.indx_exponent = int(input("Exponent: "))
+        try:
+            self.exponent = myVar[self.indx_exponent][0]
+            print("Set exponent to: "+ str(self.exponent))
+        except KeyError:
+            print("There is no monomonial for this index")
 
-
-            elif i in LEGAL_LETTERS_OPERATORS:
-                print(i + ' is an operator')
-                self.int_index.append(None)
-                self.var_index.append(None)
-                self.opr_index.append(i)
-            else:
-                print(i + ' is illegal and will be discarded')
-                continue
-
-    def return_all_index(self):
+    def update_my_deriv(self, coefficient, variable, exponent):
         ''' docstring '''
-        return(self.all_index)
+        self.coefficient = coefficient
+        self.variable = variable
+        self.exponent = exponent
+
+    def return_parent(self):
+        '''
+        Returns the calculated parent, split as two rows due
+        to length
+        '''
+        return_parent = f"{self.coefficient}{self.variable}^{self.exponent}"
+        return f"parent is: {return_parent}"
     
-    def return_int_index(self):
-        ''' docstring '''
-        return(self.int_index)
-    
-    def return_var_index(self):
-        ''' docstring '''
-        return(self.var_index)
-    
-    def return_opr_index(self):
-        ''' docstring '''
-        return(self.opr_index)
+    def print_parent(self):
+        '''
+        Prints the calculated parent, split as two rows due
+        to length
+        '''
+        print_parent = f"{self.coefficient}{self.variable}^{self.exponent}"
+        print('    ------')
+        print('')
+        print(f"    parent is: {print_parent}")
+        print('')
 
-    def print_index(self):
-        ''' user's feedback '''
-        print('all: '+ str(self.all_index))
-        print('int: '+ str(self.int_index))
-        print('var: '+ str(self.var_index))
-        print('opr: '+ str(self.opr_index))
 
+    def return_differenciation(self):
+        '''
+        Returns the calculated differenciation, split as three
+        rows due to length
+        '''
+        try:
+            differ_1 = int(self.coefficient)* int(self.exponent)
+            differ_2 = int(self.exponent)- 1
+            return_differ_1 = f"{differ_1}"
+            return_differ_2 = f"{self.variable}^{differ_2}"
+            return f"differenciation is: {return_differ_1}{return_differ_2}"
+        except (TypeError, ValueError):
+            pass
+    
+    def print_differenciation(self):
+        '''
+        Prints the calculated differenciation, split as three
+        rows due to length
+        '''
+        try:
+            differ_1 = int(self.coefficient)* int(self.exponent)
+            differ_2 = int(self.exponent)- 1
+            print_differ_1 = f"{differ_1}"
+            print_differ_2 = f"{self.variable}^{differ_2}"
+            print('    ------')
+            print('')
+            print(f"    differenciation is: {print_differ_1}{print_differ_2}")
+            print('')
+        except (TypeError, ValueError):
+            print("    ------")
+            print("")
+            print("    Monomonials containing variables and/ or exponents are not supported.")
+            print("")
 
     def run(self):
-        ''' docstring '''
+        ''' bundle all strings to execute all '''
+        run_deriv.assign_my_deriv()
+        run_deriv.return_parent()
+        run_deriv.print_parent()
+        run_deriv.return_differenciation()
+        run_deriv.print_differenciation()
 
         #test
-        self.all_index.clear()
-        self.int_index.clear()
-        self.var_index.clear()
-        self.opr_index.clear()
-        self.all_index = []
-        self.int_index = []
-        self.var_index = []
-        self.opr_index = []
-
-        self.update_my_input()
-        self.append_all_index()
-        self.verify_all_index()
-        self.print_index()
+        self.coefficient = None
+        self.variable = None
+        self.exponent = None
+        self.indx_coefficient = None
+        self.indx_exponent = None
 
 
+run_deriv = MyDeriv()
+input_recognition = InputRecognition()
 
-new_polynomial = MyPolymonial()
-new_polynomial.print_index()
-new_polynomial.run()
-new_polynomial.all_index = []
-new_polynomial.int_index = []
-new_polynomial.var_index = []
-new_polynomial.opr_index = []
-new_polynomial.print_index()
+input_recognition.run_input()
+myVar = input_recognition.return_my_polymonial()
+run_deriv.run()
 
 # End-of-file (EOF)

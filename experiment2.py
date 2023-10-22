@@ -1,3 +1,4 @@
+import importlib
 
 tag_input_guide = ['1', 'input guide']
 tag_run_input = ['2', 'run input']
@@ -29,19 +30,6 @@ def run(tag_application):
             input_recognition = InputRecognition()
             poly = MyPolymonial()
 
-            poly.reset()
-            print(poly.all_index)
-            print(poly.int_index)
-            print(poly.var_index)
-            print(poly.opr_index)
-            input_recognition.all_index = []
-            input_recognition.int_index = []
-            input_recognition.var_index = []
-            input_recognition.opr_index = []
-            input_recognition.monomonial = ['+',]
-            input_recognition.dict_index = 0
-            input_recognition.my_dict = {}
-
             input_recognition.run_input()
             my_polymonial = input_recognition.my_dict
             print("this: "+ str(my_polymonial))
@@ -61,6 +49,7 @@ def run(tag_application):
             #input_recognition.run_input()
             #myVar = input_recognition.return_my_polymonial()
             #run_deriv.run()
+            #importlib.reload(run_deriv)
             print("Hit Enter to continue...")
             input('')
 
