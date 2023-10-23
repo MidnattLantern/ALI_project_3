@@ -2,7 +2,10 @@ from input_recognition import InputRecognition
 
 
 class My2pEquation():
-    ''' docstring '''
+    '''
+    Lines, such as "self.x1 = myVar[self.indx_x1][0]" needs
+    a reference. This section store the necessary references
+    '''
     def __init__(self):
         self.x1 = None
         self.x2 = None
@@ -14,13 +17,19 @@ class My2pEquation():
         self.indx_y2 = None
 
     def my_var(self):
-        ''' docstring '''
+        '''
+        myVar, aka "my_polymonial", store the polymonial sliced
+        as monomial(s). Future version should import this from run.py
+        '''
         self.myVar = {
 
         }
 
     def assign_2p_indx(self):
-        ''' docstring '''
+        '''
+        my_var, aka my_polymonial, this section use the storing data
+        from "self.myVar = {}"
+        '''
         print("")
         print("--- 2-point Equation ---")
         print("Use the index for any monomonial you've assigned,")

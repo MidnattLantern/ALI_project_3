@@ -7,18 +7,19 @@ LEGAL_INT = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 
 class MyPolymonial:
-    ''' all_index and input_expresson may store illegal characters,
-     but int_index, var_index, opr_index wont, and only those will
-     be used for following steps '''
+    '''
+    Each character is stored inside each list, in an
+    'Excel manner'.
+    See the flowchart for more details.
+    '''
     def __init__(self):
-        # The "organised libraries"
         self.all_index = []
         self.int_index = []
         self.var_index = []
         self.opr_index = []
 
     def update_my_index(self, input_expression):
-        ''' docstring '''
+        ''' transfering user input to practical code '''
         self.input_expression = input_expression
 
     def update_my_expression(self, new_index):
@@ -63,36 +64,53 @@ class MyPolymonial:
                 continue
 
     def return_all_index(self):
-        ''' docstring '''
+        '''
+        Makes all_index accessible across
+        functions and other Python files
+        '''
         return (self.all_index)
 
     def return_int_index(self):
-        ''' docstring '''
+        '''
+        Makes int_index accessible across
+        functions and other Python files
+        '''
         return (self.int_index)
 
     def return_var_index(self):
-        ''' docstring '''
+        '''
+        Makes var_index accessible across
+        functions and other Python files
+        '''
         return (self.var_index)
 
     def return_opr_index(self):
-        ''' docstring '''
+        '''
+        Makes opr_index accessible across
+        functions and other Python files
+        '''
         return (self.opr_index)
 
     def print_index(self):
-        ''' user's feedback '''
+        ''' console feedback '''
         print('polymonial_input all: ' + str(self.all_index))
         print('polymonial_input int: ' + str(self.int_index))
         print('polymonial_input var: ' + str(self.var_index))
         print('polymonial_input opr: ' + str(self.opr_index))
 
     def run(self):
-        ''' docstring '''
+        '''
+        Bundle function that makes this
+        Python file running for convenience
+        '''
         self.update_my_input()
         self.append_all_index()
         self.verify_all_index()
 
     def reset(self):
-        ''' docstring '''
+        '''
+        Clearing all index is neccessary for revisits
+        '''
         self.all_index.clear()
         self.int_index.clear()
         self.var_index.clear()

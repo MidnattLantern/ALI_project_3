@@ -33,12 +33,13 @@ Future features
 - Inputs to mathematical tasks need to be entered again each time. But in the future, they could load the storage that was updated by the input program (2).
 - Outputs from mathematical tasks could be stored for other advanced mathematical tasks, such as outputs from derivatives to be used for integrals.
 
-Wireframes
+Flowchart
 ======
-- Lucidchart
+- Flowchart
 
 Technology
 ======
+- The flowchart(s) was sketched on Affinity Designer 2
 - Development for all parts was done through a computer running macOS.
 - All code was written in MS Visual Studio.
 - Debugging was done through MS Visual Studio.
@@ -51,15 +52,17 @@ Testing
 
 Unsolved bugs:
 ------
-- None.
+- There are no discovered bugs for ver 1.0
 
 Solved bugs:
 ------
-- The mathematical programs can be run more than once for each runtime.
+- The mathematical programs (4 and 6) can be run more than once for each runtime.
 - The input library will be reset rather than appended for each run.
-- The mathematical programs will no longer be run twice in a row.
+- The mathematical programs (4 and 6) will no longer be run twice in a row.
 
 Deployment:
 ======
 - The code was deployed on Heroku and stored on GitHub.
 - Live link: https://my-math-pilot-4e8514124918.herokuapp.com
+
+Developed by Alma Isaksson ('AlI' or 'midnatt lantern') October 2023

@@ -2,7 +2,11 @@ from input_recognition import InputRecognition
 
 
 class MyDeriv():
-    ''' docstring '''
+    '''
+    Setup for mathematical elements,
+    used to calculate derivate.
+     Updated from "update_my_deriv"
+    '''
     def __init__(self):
         self.coefficient = None
         self.variable = None
@@ -11,14 +15,20 @@ class MyDeriv():
         self.indx_exponent = None
 
     def my_var(self):
-        ''' docstring '''
+        '''
+        myVar aka "my_polynomial"
+        Imported from input_recognition.py
+        Future version should import from run.py
+        '''
         self.myVar = {
 
         }
 
     def assign_my_deriv(self):
 
-        ''' docstring '''
+        '''
+        UI
+        '''
         print("")
         print("--- Derivate ---")
         print("Use the index for any monomonial you've assigned,")
@@ -43,7 +53,10 @@ class MyDeriv():
             print("There is no monomonial for this index")
 
     def update_my_deriv(self, coefficient, variable, exponent):
-        ''' docstring '''
+        '''
+        From the setup earlier, these replace "None" with user's
+        input
+        '''
         self.coefficient = coefficient
         self.variable = variable
         self.exponent = exponent
