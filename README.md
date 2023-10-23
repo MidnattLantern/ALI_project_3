@@ -1,5 +1,10 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
+IMPORTANT!!
+======
+- My Math Pilot is incompatible with Safari,
+- It is recomended that you use Chrome or Firefox.
+
 User stories
 ======
 - As a visitor, I expect to be able to automatically calculate a 2-point equation.
@@ -38,7 +43,6 @@ Technology
 - All code was written in MS Visual Studio.
 - Debugging was done through MS Visual Studio.
 
-
 Testing
 ======
 - pep8 validator
@@ -47,12 +51,13 @@ Testing
 
 Unsolved bugs:
 ------
-- The mathematical programs will be run twice.
+- None.
 
 Solved bugs:
 ------
 - The mathematical programs can be run more than once for each runtime.
 - The input library will be reset rather than appended for each run.
+- The mathematical programs will no longer be run twice in a row.
 
 Deployment:
 ======
