@@ -30,31 +30,31 @@ Future features
 
 Wireframes
 ======
-- lucidchart
+- Lucidchart
 
 Technology
 ======
 - Development for all parts was done through a computer running macOS.
 - All code was written in MS Visual Studio.
-- Debugging was done trough MS Visual Studio.
+- Debugging was done through MS Visual Studio.
 
 
 Testing
 ======
 - pep8 validator
-- The code was checked for validation trough the pep8 validator
-- As of version 22 october, there are no errors
+- The code was checked for validation through the pep8 validator
+- As of version 22 October, there are no errors
 
 Unsolved bugs:
 ------
-- The mathmatical programs will be run twice.
+- The mathematical programs will be run twice.
 
 Solved bugs:
 ------
-- The mathmatical programs can be run more than once for each runtime.
+- The mathematical programs can be run more than once for each runtime.
 - The input library will be reset rather than appended for each run.
 
 Deployment:
 ======
-- The code was deployed on Heroku and stored on Github.
+- The code was deployed on Heroku and stored on GitHub.
 - Live link: https://my-math-pilot-6200b0c88074.herokuapp.com
