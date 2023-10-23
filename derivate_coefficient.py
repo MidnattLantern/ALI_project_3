@@ -123,9 +123,10 @@ class MyDeriv():
 
 run_deriv = MyDeriv()
 input_recognition = InputRecognition()
-
-input_recognition.run_input()
 myVar = input_recognition.return_my_polymonial()
-run_deriv.run()
+
+if __name__ == '__main__':
+    input_recognition.run_input()
+    run_deriv.run()
 
 # End-of-file (EOF)

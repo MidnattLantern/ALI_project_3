@@ -88,9 +88,10 @@ class My2pEquation():
 
 run_2p_equation = My2pEquation()
 input_recognition = InputRecognition()
-
-input_recognition.run_input()
 myVar = input_recognition.return_my_polymonial()
-run_2p_equation.run()
+
+if __name__ == '__main__':
+    input_recognition.run_input()
+    run_2p_equation.run()
 
 # End-of-file (EOF)

@@ -57,4 +57,4 @@ Solved bugs:
 Deployment:
 ======
 - The code was deployed on Heroku and stored on GitHub.
-- Live link: https://my-math-pilot-6200b0c88074.herokuapp.com
+- Live link: https://my-math-pilot-4e8514124918.herokuapp.com

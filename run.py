@@ -1,6 +1,6 @@
-'''
 import importlib
-'''
+import derivate_coefficient
+import linear_2p_equation
 
 tag_input_guide = ['1', 'input guide']
 tag_run_input = ['2', 'run input']
@@ -53,8 +53,9 @@ def run(tag_application):
         input('\n')
 
     elif tag_application in tag_run_derivate:
-        import derivate_coefficient
-        #importlib.reload(derivate_coefficient)
+        importlib.reload(derivate_coefficient)
+        derivate_coefficient.input_recognition.run_input()
+        derivate_coefficient.run_deriv.run()
         print("Hit Enter to continue...")
         input('\n')
 
@@ -65,8 +66,9 @@ def run(tag_application):
         input('\n')
 
     elif tag_application in tag_run_linerar2p:
-        import linear_2p_equation
-        #importlib.reload(linear_2p_equation)
+        importlib.reload(linear_2p_equation)
+        linear_2p_equation.input_recognition.run_input()
+        linear_2p_equation.run_2p_equation.run()
         print("Hit Enter to continue...")
         input('\n')
 
