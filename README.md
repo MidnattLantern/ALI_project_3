@@ -4,6 +4,7 @@ IMPORTANT!!
 ======
 - My Math Pilot is incompatible with Safari,
 - It is recomended that you use Chrome or Firefox.
+![first%20thing%20you%20see.png](https://raw.githubusercontent.com/MidnattLantern/ALI_project_3/main/readme_photos/first%20thing%20you%20see.png)
 
 User stories
 ======
@@ -35,7 +36,8 @@ Future features
 
 Flowchart
 ======
-- Flowchart
+![flowchart%202.png](https://raw.githubusercontent.com/MidnattLantern/ALI_project_3/main/readme_photos/flowchart%202.png)
+![flowchart%201.png](https://raw.githubusercontent.com/MidnattLantern/ALI_project_3/main/readme_photos/flowchart%201.png)
 
 Technology
 ======
@@ -46,9 +48,14 @@ Technology
 
 Testing
 ======
-- pep8 validator
+- pep8 validator: https://pep8ci.herokuapp.com 
 - The code was checked for validation through the pep8 validator
-- As of version 22 October, there are no errors
+- As of version 24:th October, there are no errors
+![derivate_coefficient.py.png](https://raw.githubusercontent.com/MidnattLantern/ALI_project_3/main/readme_photos/pep8%204%20derivate_coefficient.py.png)
+![linear_2p_equation.py.png](https://raw.githubusercontent.com/MidnattLantern/ALI_project_3/main/readme_photos/pep8%204%20linear_2p_equation.py.png)
+![polynomial_input.py.png](https://raw.githubusercontent.com/MidnattLantern/ALI_project_3/main/readme_photos/pep8%204%20polynomial_input.py.png)
+![run.py.png](https://raw.githubusercontent.com/MidnattLantern/ALI_project_3/main/readme_photos/pep8%204%20run.py.png)
+![input_recognition.py.png](https://raw.githubusercontent.com/MidnattLantern/ALI_project_3/main/readme_photos/pepp8%204%20input_recognitioninput_recognition.py.png)
 
 Unsolved bugs:
 ------

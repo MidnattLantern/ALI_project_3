@@ -18,7 +18,7 @@ my_polymonial = {
 
 
 def run(tag_application):
-    ''' docstring '''
+    ''' each elif is own "program" '''
     if tag_application in tag_input_guide:
         f = open("input_guide.txt")
         print(f.read())
@@ -85,7 +85,7 @@ def run(tag_application):
 
 
 def initialize():
-    ''' code '''
+    ''' keeping My Math Pilot running '''
     while LOOP_RUN is True:
         print("--- Type the program you want to use: ---")
         print('')
